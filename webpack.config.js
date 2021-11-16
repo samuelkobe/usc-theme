@@ -30,8 +30,8 @@ module.exports = (env) => {
           port: '8080',
           open: 'external',
           // If using the Local App by Flywheel or similar to produce local domain for your project change the details below to match (remove proxy if SSL is not required).
-          host: 'bl-driver-training.local',
-          proxy: 'https://bl-driver-training.local',
+          host: 'usc.local',
+          proxy: 'https://usc.local',
           files: [{
               match: ['./*.php'],
               fn: function (event, file) {
