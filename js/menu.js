@@ -20,7 +20,7 @@ menu_button.addEventListener('click', (event) => {
     if (menu_button.classList.contains('open')) {
         menu_button.classList.remove('open');
         menu.classList.remove('open');
-    } else {a
+    } else {
         menu_button.classList.add('open');
         menu.classList.add('open');
     }

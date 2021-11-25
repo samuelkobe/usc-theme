@@ -1,0 +1,53 @@
+{
+    "key": "group_6198317a35aac",
+    "title": "TEMPLATE: Colour Choices",
+    "fields": [
+        {
+            "key": "field_61982eb49ff1e",
+            "label": "Colours",
+            "name": "colours",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "main": "<span style=\"color:#2EB8C1; font-weight: bold;\">Robin Egg<\/span>",
+                "dark": "<span style=\"color:#466271; font-weight: bold;\">Spruce<\/span>",
+                "accent": "<span style=\"color:#FC8658; font-weight: bold;\">Salmon<\/span>",
+                "neutral": "<span style=\"color:#B4A99D; font-weight: bold;\">Sandstone<\/span>",
+                "black": "<span style=\"color:#2E2C2C; font-weight: bold;\">Dark Clay<\/span>",
+                "none": "<span style=\"color:#B4B4B4;\">None<\/span>"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "main",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": ""
+            }
+        ]
+    ],
+    "menu_order": 9999,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1637365218
+}

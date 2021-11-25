@@ -1,6 +1,6 @@
 {
     "key": "group_5fdc52f1e768d",
-    "title": "Hero Content",
+    "title": "Page Hero",
     "fields": [
         {
             "key": "field_5fdc53205831e",
@@ -23,11 +23,36 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_610d817e07889",
+                            "label": "Message",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61155ba9511cb",
+                                        "operator": "!=",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "75",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Page Hero is currently <strong>Off<\/strong>. Special styles are added behind the scenes to ensure that the website's navigation is visible when it is off. Also the title for this page is defaulted to the page <strong>Title<\/strong>. If you are unsure what this means contact Web Ok Solutions Inc.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        },
+                        {
                             "key": "field_61155ba9511cb",
                             "label": "Page hero?",
                             "name": "page_hero",
                             "type": "true_false",
-                            "instructions": "Toggle page hero on or off.",
+                            "instructions": "The <strong>Page hero<\/strong> is the image or video section at the top of a website's web page. This control toggles the Page hero section on or off. Some simple pages do not need a Page hero. This is totally up to you.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -46,7 +71,7 @@
                             "label": "Background type?",
                             "name": "background_type",
                             "type": "true_false",
-                            "instructions": "Choose between a solid colour or a video background.",
+                            "instructions": "Choose between an image or a video background for the Page hero.",
                             "required": 0,
                             "conditional_logic": [
                                 [
@@ -65,86 +90,16 @@
                             "message": "",
                             "default_value": 1,
                             "ui": 1,
-                            "ui_on_text": "Colour",
+                            "ui_on_text": "Image",
                             "ui_off_text": "Video"
                         },
                         {
-                            "key": "field_60feec2940880",
-                            "label": "Background style",
-                            "name": "bg_color",
-                            "type": "radio",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_61155ba9511cb",
-                                        "operator": "==",
-                                        "value": "1"
-                                    },
-                                    {
-                                        "field": "field_611566f814dce",
-                                        "operator": "==",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "50",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "grey-light": "Light",
-                                "brand-darkest": "Medium",
-                                "grey-dark": "Dark"
-                            },
-                            "allow_null": 0,
-                            "other_choice": 0,
-                            "default_value": "",
-                            "layout": "horizontal",
-                            "return_format": "value",
-                            "save_other_choice": 0
-                        },
-                        {
-                            "key": "field_611566ce14dcd",
-                            "label": "Background video",
-                            "name": "background_video",
-                            "type": "file",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_61155ba9511cb",
-                                        "operator": "==",
-                                        "value": "1"
-                                    },
-                                    {
-                                        "field": "field_611566f814dce",
-                                        "operator": "!=",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "100",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "url",
-                            "library": "all",
-                            "min_size": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        },
-                        {
-                            "key": "field_60fef06840264",
-                            "label": "Image",
-                            "name": "background_icon",
+                            "key": "field_61942d0083f99",
+                            "label": "Background image",
+                            "name": "background_image",
                             "type": "image",
-                            "instructions": "It is recommended that a PNG image with a transparent background is used.",
-                            "required": 0,
+                            "instructions": "Upload your image file here. This file should be small (Max 4MB). If you find the image file you are trying to upload is too large and not working reach out to Web Ok Solutions Inc.",
+                            "required": 1,
                             "conditional_logic": [
                                 [
                                     {
@@ -172,15 +127,219 @@
                             "min_size": "",
                             "max_width": "",
                             "max_height": "",
+                            "max_size": 4,
+                            "mime_types": ".jpg, .png, .webp"
+                        },
+                        {
+                            "key": "field_611566ce14dcd",
+                            "label": "Background video",
+                            "name": "background_video",
+                            "type": "file",
+                            "instructions": "Upload your video file here. This file should be small (Max 24MB). If you find the video file you are trying to upload is too large and not working reach out to Web Ok Solutions Inc.",
+                            "required": 1,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61155ba9511cb",
+                                        "operator": "==",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "field": "field_611566f814dce",
+                                        "operator": "!=",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": 24,
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_619831d0c533d",
+                            "label": "Background blend colour",
+                            "name": "background_blend_colour",
+                            "type": "clone",
+                            "instructions": "This option lets you choose a colour to blend into the page hero's image or video. You can set it to <strong>'none'<\/strong> if you don't want a colour blend. 'Robin Egg' is the default colour.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61155ba9511cb",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_61982eb49ff1e"
+                            ],
+                            "display": "group",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_619c13706d5ac",
+                            "label": "Content",
+                            "name": "content",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61155ba9511cb",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_60fef155b9238",
+                                    "label": "Hero title",
+                                    "name": "hero_title",
+                                    "type": "text",
+                                    "instructions": "Add a title for the top of this page (Max 32 characters)",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_61155ba9511cb",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": 32
+                                },
+                                {
+                                    "key": "field_60fef19cb9239",
+                                    "label": "Hero content",
+                                    "name": "hero_content",
+                                    "type": "textarea",
+                                    "instructions": "Add a few sentences of content to the hero (Max characters 256).",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_61155ba9511cb",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": 258,
+                                    "rows": 4,
+                                    "new_lines": "br"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_619c15106d5ae",
+                            "label": "Icon?",
+                            "name": "icon_toggle",
+                            "type": "true_false",
+                            "instructions": "Do you want an icon in the hero? This should probably only be used on the home page. Its default state is off.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61155ba9511cb",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "On",
+                            "ui_off_text": "Off"
+                        },
+                        {
+                            "key": "field_619c139a6d5ad",
+                            "label": "Hero icon",
+                            "name": "hero_icon",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61155ba9511cb",
+                                        "operator": "==",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "field": "field_619c15106d5ae",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
                             "max_size": "",
                             "mime_types": ""
                         },
                         {
-                            "key": "field_60fef155b9238",
-                            "label": "Hero Title",
-                            "name": "hero_title",
-                            "type": "text",
-                            "instructions": "Add a title for this page (Max 24 characters)",
+                            "key": "field_619c15736d5b0",
+                            "label": "Icon Message",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
                             "required": 0,
                             "conditional_logic": [
                                 [
@@ -188,53 +347,29 @@
                                         "field": "field_61155ba9511cb",
                                         "operator": "==",
                                         "value": "1"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "50",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": 24
-                        },
-                        {
-                            "key": "field_60fef19cb9239",
-                            "label": "Hero Content",
-                            "name": "hero_content",
-                            "type": "textarea",
-                            "instructions": "Add a few sentences to the hero (Max characters 256).",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
+                                    },
                                     {
-                                        "field": "field_61155ba9511cb",
-                                        "operator": "==",
+                                        "field": "field_619c15106d5ae",
+                                        "operator": "!=",
                                         "value": "1"
                                     }
                                 ]
                             ],
                             "wrapper": {
-                                "width": "50",
+                                "width": "30",
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "maxlength": 258,
-                            "rows": 4,
-                            "new_lines": "br"
+                            "message": "The icon is turned off. This should be off if not on the home page.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
                         },
                         {
                             "key": "field_60fef1fca5b13",
                             "label": "Button?",
                             "name": "button_toggle",
                             "type": "true_false",
-                            "instructions": "Choose to have a call to action button in the hero.",
+                            "instructions": "Do you want a button in the page hero? To have a call to action button in the hero toggle this to yes.",
                             "required": 0,
                             "conditional_logic": [
                                 [
@@ -251,7 +386,7 @@
                                 "id": ""
                             },
                             "message": "",
-                            "default_value": 1,
+                            "default_value": 0,
                             "ui": 1,
                             "ui_on_text": "Yes",
                             "ui_off_text": "No"
@@ -282,7 +417,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "message": "Button below is currently hidden.",
+                            "message": "The call to action button is currently turned off. This just means there will be no button in the page hero.",
                             "new_lines": "wpautop",
                             "esc_html": 0
                         },
@@ -313,31 +448,6 @@
                                 "id": ""
                             },
                             "return_format": "array"
-                        },
-                        {
-                            "key": "field_610d817e07889",
-                            "label": "Message",
-                            "name": "",
-                            "type": "message",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_61155ba9511cb",
-                                        "operator": "!=",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "75",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "Page Hero is currently <b>Off<\/b>. Special styles are added behind the scenes to ensure that the website's navigation is visible when it is off (Yest it out and see the difference).",
-                            "new_lines": "wpautop",
-                            "esc_html": 0
                         }
                     ],
                     "min": "1",
@@ -352,9 +462,14 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "post_type",
                 "operator": "==",
-                "value": "default"
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "template-splash.php"
             }
         ]
     ],
@@ -377,5 +492,6 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1633641252
+    "show_in_rest": 0,
+    "modified": 1637863981
 }

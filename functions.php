@@ -45,8 +45,8 @@ if (function_exists('add_theme_support')) {
     load_theme_textdomain('web-ok-starter', get_template_directory() . '/languages');
 
     // Custom logo support
-    $logo_width  = 300;
-    $logo_height = 100;
+    $logo_width  = 240;
+    $logo_height = 128;
 
     add_theme_support(
         'custom-logo',
@@ -56,32 +56,6 @@ if (function_exists('add_theme_support')) {
             'unlink-homepage-logo' => false,
         )
     );
-
-    $header_images = array(
-        'beach' => array(
-                'url' => get_template_directory_uri() . '/img/beach-header.jpg',
-                'thumbnail_url' => get_template_directory_uri() . '/img/beach-header-thumbnail.jpg',
-                'description'   => 'Beach Header',
-        ),
-        'lake' => array(
-                'url' => get_template_directory_uri() . '/img/lake-header.jpg',
-                'thumbnail_url' => get_template_directory_uri() . '/img/lake-header-thumbnail.jpg',
-                'description'   => 'Lake Header',
-        ),  
-        'default-image' => array(
-                'url' => get_template_directory_uri() . '/img/default-header.jpg',
-                'thumbnail_url' => get_template_directory_uri() . '/img/default-header-thumbnail.jpg',
-                'description'   => 'Default Image',
-        ),  
-    );
-    register_default_headers( $header_images );
-
-    $header_info = array(
-        'width'         => 1440,
-        'height'        => 480,
-        'default-image' => get_template_directory_uri() . '/img/default-header.jpg',
-    );
-    add_theme_support( 'custom-header', $header_info );
 
     add_theme_support( "custom-background" );
 
@@ -158,6 +132,9 @@ function footer_scripts()
     //vh height adjustment script for ensuring tailwind h-screen(100vh) heights are not effected by mobile browser's UI and controls
     wp_register_script('h-vh', get_template_directory_uri() . '/js/h-vh.js');
     wp_enqueue_script('h-vh'); // Enqueue it!
+    
+    wp_register_script('faqs-scripts', get_template_directory_uri() . '/js/faqs.js', array(), '1.0.0'); // Custom scripts
+    wp_enqueue_script('faqs-scripts'); // Enqueue
 }
 
 // Load styles

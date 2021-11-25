@@ -1,15 +1,15 @@
 // menu and nav styles
 
 #header {
-    @apply h-16;
+    @apply h-32;
     position: fixed;
     transition: height 500ms ease-out 125ms, opacity 500ms ease-out 125ms;
     &.topped {
-        @apply bg-white h-16 opacity-100;
+        @apply bg-white h-16 lg:h-32 opacity-100;
         transition: height 500ms ease-out 125ms, opacity 500ms ease-out 125ms;
     }
     &.header-onload {
-        @apply h-16 opacity-100;
+        @apply h-16 lg:h-32 opacity-100;
         transition: height 500ms ease-out 125ms, opacity 500ms ease-out 125ms;
         animation-duration: 1000ms;
         animation-iteration-count: 1;
@@ -17,75 +17,57 @@
         animation-name: popdown;
     }
     &.scroll-down {
-        @apply bg-white text-grey-dark h-12 opacity-100;
+        @apply bg-white h-16 opacity-100;
         box-shadow: 0 2px 1px -1px rgb(230, 228, 228);
         transition: height 500ms ease-out 125ms, opacity 500ms ease-out 125ms;
         position: fixed;
         .custom-logo {
-          @apply transition-all duration-500 lg:h-8 lg:w-auto;
-        }
-        ul {
-          @apply lg:text-base xl:text-lg;
+          @apply transition-all duration-500 lg:h-12 lg:w-auto;
         }
         ul > li > a {
           @apply text-grey-dark;
         }
         ul li.active > a {
-          &::after {
-            content: "";
-            @apply bg-grey-dark;
-          }
+          @apply text-brand-main;
        }
     }
 
     &.scroll-up {
-        @apply bg-white h-12 opacity-100;
+        @apply bg-white h-16 opacity-100;
         box-shadow: 0 2px 1px -1px rgb(230, 228, 228);
         transition: height 500ms ease-out 0ms, opacity 500ms ease-out 0ms;
         position: fixed;
         .custom-logo {
-          @apply transition-all duration-500 lg:h-8 lg:w-auto;
-        }
-        ul {
-          @apply lg:text-base xl:text-lg;
+          @apply transition-all duration-500 lg:h-12 lg:w-auto;
         }
         ul > li > a {
           @apply text-grey-dark;
         }
         ul li.active > a {
-          &::after {
-            content: "";
-            @apply bg-grey-dark;
-          }
+          @apply text-brand-main;
        }
     }
     &.hold-down {
-        @apply bg-grey-medium #{!important};
-        box-shadow: 0 2px 1px -1px rgb(230, 228, 228);
+        @apply bg-white #{!important};
+        box-shadow: 0 2px 7px -1px rgb(224, 224, 224);
         transition: height 500ms ease-out 125ms, opacity 500ms ease-out 125ms;
         position: fixed;
         .custom-logo {
-          @apply transition-all duration-500 lg:h-8 lg:w-auto;
-        }
-        ul {
-          @apply lg:text-base xl:text-lg;
+          @apply transition-all duration-500;
         }
         ul > li > a {
           @apply text-grey-dark;
         }
         ul li.active > a {
-          &::after {
-            content: "";
-            @apply bg-grey-dark;
-          }
-       }
+          @apply text-brand-main;
+        }
     }
   &:hover {
     @apply opacity-100;
     transition: height 250ms ease-out 0ms, opacity 250ms ease-out 0ms;
   }
   .custom-logo {
-    @apply  transition-all duration-300 xl:h-12 w-auto;
+    @apply  transition-all ease-in duration-500 xl:h-24 w-auto;
   }
 }
 
@@ -93,29 +75,20 @@ header {
   @apply uppercase;
   ul {
     @apply w-full flex flex-col lg:flex-row justify-between text-xl lg:text-base xl:text-lg transition-all duration-500;
-    // li.active > a {
-    //     &::after {
-    //       content: "";
-    //       @apply bg-grey-dark;
-    //     }
-    // }
+    li.active > a {
+      @apply text-brand-main;
+
+    }
     li > a {
       @apply z-0 relative;
-      &::after {
-        content: "";
-        @apply absolute -z-1 -bottom-1 left-0 w-full h-075 bg-transparent transition-colors duration-300;
-      }
       &:hover {
-        &::after {
-          content: "";
-          @apply bg-brand-main;
-        }
+        @apply text-brand-main #{!important};
       }
     }
-  }
+  }      
 }
 
-#menu {
+#menu { 
   &.open {
     @apply h-auto z-10 translate-x-0 opacity-100 transition-transform duration-300 lg:duration-0;
   }

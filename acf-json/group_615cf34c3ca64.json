@@ -1,6 +1,6 @@
 {
     "key": "group_615cf34c3ca64",
-    "title": "Flexible Content Rows",
+    "title": "Flexible Content",
     "fields": [
         {
             "key": "field_615cf35700888",
@@ -16,19 +16,19 @@
                 "id": ""
             },
             "layouts": {
-                "layout_615cf3629c68e": {
-                    "key": "layout_615cf3629c68e",
-                    "name": "about_section",
-                    "label": "About Section",
+                "layout_619fec03f3d43": {
+                    "key": "layout_619fec03f3d43",
+                    "name": "paragraph_and_title",
+                    "label": "Paragraph and Title",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_615cf37c00889",
-                            "label": "Section title",
-                            "name": "section_title",
+                            "key": "field_619fec0ef3d44",
+                            "label": "Title",
+                            "name": "p_title",
                             "type": "text",
-                            "instructions": "Add section title here (Max 64 characters).",
-                            "required": 0,
+                            "instructions": "Add a title for the paragraph(s) below (Max 50 characters).",
+                            "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -39,14 +39,14 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "maxlength": 64
+                            "maxlength": 50
                         },
                         {
-                            "key": "field_615cf3b40088a",
-                            "label": "Section content",
-                            "name": "section_content",
-                            "type": "wysiwyg",
-                            "instructions": "",
+                            "key": "field_619fec3cf3d45",
+                            "label": "Paragraph(s)",
+                            "name": "p_content",
+                            "type": "textarea",
+                            "instructions": "Add content for the parapgrahs here. You can use the return key [enter] to create new paragraphs and the spacing will be added correctly on the website.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -55,46 +55,27 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 0,
-                            "delay": 0
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": "wpautop"
                         }
                     ],
-                    "min": "1",
-                    "max": "1"
+                    "min": "",
+                    "max": ""
                 },
-                "layout_615cf3cd0088b": {
-                    "key": "layout_615cf3cd0088b",
-                    "name": "pricing_section",
-                    "label": "Pricing Section",
+                "layout_619fcfddb96a5": {
+                    "key": "layout_619fcfddb96a5",
+                    "name": "faq",
+                    "label": "FAQ",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_615cf3cd0088c",
-                            "label": "Section title",
-                            "name": "section_title",
-                            "type": "text",
-                            "instructions": "Add section title here (Max 64 characters).",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": 64
-                        },
-                        {
-                            "key": "field_615cf3e70088e",
-                            "label": "Pricing options",
-                            "name": "pricing_options",
+                            "key": "field_619fd03eb96a7",
+                            "label": "FAQs",
+                            "name": "faqs",
                             "type": "repeater",
-                            "instructions": "",
+                            "instructions": "Add all FAQs here. Use multiple FAQ components if you want to separate them into categories.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -103,63 +84,36 @@
                                 "id": ""
                             },
                             "collapsed": "",
-                            "min": 3,
-                            "max": 3,
-                            "layout": "block",
-                            "button_label": "Add Pricing",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "Add FAQ",
                             "sub_fields": [
                                 {
-                                    "key": "field_615cf57c00893",
-                                    "label": "Tag?",
-                                    "name": "tag_toggle",
-                                    "type": "true_false",
-                                    "instructions": "",
+                                    "key": "field_619fd050b96a8",
+                                    "label": "Question",
+                                    "name": "question",
+                                    "type": "textarea",
+                                    "instructions": "FAQ question (Max 150 characters)",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "50",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "message": "",
-                                    "default_value": 0,
-                                    "ui": 1,
-                                    "ui_on_text": "",
-                                    "ui_off_text": ""
-                                },
-                                {
-                                    "key": "field_615cf59f00894",
-                                    "label": "Tag",
-                                    "name": "tag",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_615cf57c00893",
-                                                "operator": "==",
-                                                "value": "1"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "50",
+                                        "width": "",
                                         "class": "",
                                         "id": ""
                                     },
                                     "default_value": "",
                                     "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
+                                    "maxlength": 150,
+                                    "rows": 2,
+                                    "new_lines": ""
                                 },
                                 {
-                                    "key": "field_615cf44800890",
-                                    "label": "Title",
-                                    "name": "title",
-                                    "type": "text",
-                                    "instructions": "",
+                                    "key": "field_619fd08ab96a9",
+                                    "label": "Answer",
+                                    "name": "answer",
+                                    "type": "textarea",
+                                    "instructions": "FAQ Answer (Max 1500 Characters)",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -169,238 +123,18 @@
                                     },
                                     "default_value": "",
                                     "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
-                                },
-                                {
-                                    "key": "field_615cf4350088f",
-                                    "label": "Price",
-                                    "name": "price",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "40",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
-                                },
-                                {
-                                    "key": "field_615cf54000891",
-                                    "label": "Options",
-                                    "name": "options",
-                                    "type": "repeater",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "collapsed": "",
-                                    "min": 1,
-                                    "max": 4,
-                                    "layout": "block",
-                                    "button_label": "Add option",
-                                    "sub_fields": [
-                                        {
-                                            "key": "field_615cf7bb1da69",
-                                            "label": "Option details",
-                                            "name": "option_details",
-                                            "type": "text",
-                                            "instructions": "Add details here (Max characters 32).",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": "",
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "default_value": "",
-                                            "placeholder": "",
-                                            "prepend": "",
-                                            "append": "",
-                                            "maxlength": 32
-                                        }
-                                    ]
+                                    "maxlength": 1500,
+                                    "rows": 6,
+                                    "new_lines": ""
                                 }
                             ]
-                        },
-                        {
-                            "key": "field_615cf56300892",
-                            "label": "CTA",
-                            "name": "cta",
-                            "type": "link",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array"
-                        },
-                        {
-                            "key": "field_615cf5e900895",
-                            "label": "More info",
-                            "name": "more_info",
-                            "type": "text",
-                            "instructions": "Add any extra notes (Max characters 128).",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": 132
                         }
                     ],
-                    "min": "1",
-                    "max": "1"
-                },
-                "layout_615cf61addc4f": {
-                    "key": "layout_615cf61addc4f",
-                    "name": "get_in_touch_section",
-                    "label": "Get in touch section",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_615cf61addc50",
-                            "label": "Section title",
-                            "name": "section_title",
-                            "type": "text",
-                            "instructions": "Add section title here (Max 64 characters).",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": 64
-                        },
-                        {
-                            "key": "field_615cf61addc51",
-                            "label": "Section content",
-                            "name": "section_content",
-                            "type": "textarea",
-                            "instructions": "Add message for users (Max characters 512).",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "maxlength": 512,
-                            "rows": 4,
-                            "new_lines": ""
-                        },
-                        {
-                            "key": "field_615cf663ddc52",
-                            "label": "Contact methods",
-                            "name": "contact_methods",
-                            "type": "repeater",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "collapsed": "",
-                            "min": 1,
-                            "max": 3,
-                            "layout": "block",
-                            "button_label": "Add method",
-                            "sub_fields": [
-                                {
-                                    "key": "field_615cf676ddc53",
-                                    "label": "Icon",
-                                    "name": "icon",
-                                    "type": "image",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "20",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array",
-                                    "preview_size": "medium",
-                                    "library": "all",
-                                    "min_width": "",
-                                    "min_height": "",
-                                    "min_size": "",
-                                    "max_width": "",
-                                    "max_height": "",
-                                    "max_size": "",
-                                    "mime_types": ""
-                                },
-                                {
-                                    "key": "field_615cf67eddc54",
-                                    "label": "Call to action",
-                                    "name": "call_to_action",
-                                    "type": "link",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "80",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array"
-                                }
-                            ]
-                        },
-                        {
-                            "key": "field_615cf6c8ddc55",
-                            "label": "Form Embed",
-                            "name": "form_embed",
-                            "type": "wysiwyg",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "tabs": "text",
-                            "media_upload": 0,
-                            "toolbar": "full",
-                            "delay": 0
-                        }
-                    ],
-                    "min": "1",
-                    "max": "1"
+                    "min": "",
+                    "max": ""
                 }
             },
-            "button_label": "Add Row",
+            "button_label": "Add Content",
             "min": "",
             "max": ""
         }
@@ -411,10 +145,15 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "template-splash.php"
             }
         ]
     ],
-    "menu_order": 1,
+    "menu_order": 2,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -433,5 +172,6 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1633636327
+    "show_in_rest": 0,
+    "modified": 1637877565
 }

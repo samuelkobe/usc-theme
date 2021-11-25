@@ -13,6 +13,9 @@
 		<meta property="og:url" content="<?php the_field( 'open_graph_url', 'option' ); ?>" />
 		<meta property="og:description" content="<?php bloginfo('description'); ?>" />
 
+		<link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 		<script src="https://unpkg.com/scrollreveal"></script>
 		<script>
 			ScrollReveal({ reset: true });
@@ -34,11 +37,11 @@
 			<header id="header" class="flex flex-row w-full h-auto bg-white opacity-70 fixed top-0 z-50 header-onload" role="banner">
 
 				<div class="contained w-full justify-around">
-					<div class="flex flex-row items-center w-full h-16 justify-between relative">
+					<div class="flex flex-row items-center w-full h-16 lg:h-32 justify-between relative">
 
-						<div class="flex flex-row items-center w-24 lg:w-auto py-4 order-1 z-20">
+						<div class="flex flex-row items-center w-24 lg:w-48 xl:w-auto py-4 order-1 z-20">
 							<?php if (has_custom_logo()) : ?>
-								<div class="flex flex-row lg:mr-4 w-24 2xl:w-36"><?php the_custom_logo(); ?></div>
+								<div class="flex flex-row lg:mr-4"><?php the_custom_logo(); ?></div>
 							<?php else : ?>
 								<p class="text-base"><?php bloginfo('title');?></p>
 								<p class="text-xs"><?php bloginfo('description');?></p>
@@ -48,8 +51,8 @@
 						<div class="visible lg:invisible block lg:hidden order-2 lg:order-3 w-8 h-4 lg:w-0 justify-center items-center z-20">
 							<!-- button -->
 							<button id="menu-button" class="hamburger w-8 flex flex-col focus:outline-none" type="button" name="navigation button" aria-label="navigation button">
-								<span class="w-8 h-1 bg-grey-dark inline-block mb-2 transition-transform ease-out duration-200 origin-hamburger"></span>
-								<span class="w-8 h-1 bg-grey-dark inline-block transition-transform ease-out duration-200 origin-hamburger"></span>
+								<span class="w-8 h-1 bg-brand-main inline-block mb-2 transition-transform ease-out duration-200 origin-hamburger"></span>
+								<span class="w-8 h-1 bg-brand-main inline-block transition-transform ease-out duration-200 origin-hamburger"></span>
 							</button>
 							<!-- /button -->
 						</div>

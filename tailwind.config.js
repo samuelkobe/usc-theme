@@ -8,16 +8,21 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          bright: '#efcaca',
-          main: '#a03d47',
-          dark: '#6d1f2a',
-          darkest: '#350c13',
+          accent: '#FC8658',
+          main: '#2EB8C1',
+          dark: '#466271',
+          neutral: '#B4A99D',
+          black: '#2E2C2C',
         },
         grey: {
           light: '#F2F2F2',
-          medium: '#676767',
-          dark: '#222222',
+          medium: '#B4B4B4',
+          dark: '#2E2C2C',
         }
+      },
+      minWidth: {
+        '32': '8rem',
+        '40': '10rem',
       },
       minHeight: {
         '96': '24rem',
@@ -27,16 +32,22 @@ module.exports = {
         '0': '0ms',
       },
       fontFamily: {
-        sans: ["Open Sans", "sans-serif"],
-        title: ["Scheherazade New", "sans-serif"]
+        sans: ["Lato", "sans-serif"],
+        title: ["Lato", "sans-serif"],
+        button: ["Nunito", "sans-serif"]
       },
       spacing: {
         '025': '1px',
         '05': '2px',
         '075': '3px',
+        '1/12': '8.3333%',
+        '1/6': '16.6667%',
       },
       transformOrigin: {
         'hamburger': '0.475rem',
+      },
+      transitionProperty: {
+        'height': 'height',
       },
       width: {
         '192': '48rem',
