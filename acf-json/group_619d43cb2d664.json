@@ -1,6 +1,6 @@
 {
     "key": "group_619d43cb2d664",
-    "title": "Message Board",
+    "title": "Notice Board",
     "fields": [
         {
             "key": "field_619d49f10be9f",
@@ -174,5 +174,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1637798546
+    "modified": 1637893745
 }

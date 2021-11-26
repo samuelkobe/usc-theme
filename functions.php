@@ -91,6 +91,59 @@ function webokstarter_nav()
 	);
 }
 
+// Footer Navigation
+function footer_nav_one()
+{
+	wp_nav_menu(
+	array(
+		'theme_location'  => 'footer-menu-one',
+		'menu'            => '',
+		'container'       => 'div',
+		'container_class' => 'menu-{menu slug}-container',
+		'container_id'    => '',
+		'menu_class'      => 'menu',
+		'menu_id'         => '',
+		'echo'            => true,
+		'fallback_cb'     => false,
+		'before'          => '',
+		'after'           => '',
+		'link_before'     => '',
+		'link_after'      => '',
+		'items_wrap'      => '<ul class="">%3$s</ul>',
+		'depth'           => 0,
+        'add_li_class'    => '',
+		'walker'          => false
+		)
+	);
+}
+
+// Footer Navigation
+function footer_nav_two()
+{
+	wp_nav_menu(
+	array(
+		'theme_location'  => 'footer-menu-two',
+		'menu'            => '',
+		'container'       => 'div',
+		'container_class' => 'menu-{menu slug}-container',
+		'container_id'    => '',
+		'menu_class'      => 'menu',
+		'menu_id'         => '',
+		'echo'            => true,
+		'fallback_cb'     => false,
+		'before'          => '',
+		'after'           => '',
+		'link_before'     => '',
+		'link_after'      => '',
+		'items_wrap'      => '<ul class="">%3$s</ul>',
+		'depth'           => 0,
+        'add_li_class'    => '',
+		'walker'          => false
+		)
+	);
+}
+
+
 add_action( 'after_setup_theme', 'wpse_theme_setup' );
 function wpse_theme_setup() {
     /*
@@ -149,7 +202,8 @@ function register_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
         'header-menu' => __('Header Menu', 'web-ok-starter'), // Header/Main Navigation
-        'sidebar-menu' => __('Footer Menu', 'web-ok-starter'), // Footer Navigation
+        'footer-menu-one' => __('Footer Menu 1', 'web-ok-starter'), // Footer Navigation
+        'footer-menu-two' => __('Footer Menu 2', 'web-ok-starter'), // Footer Navigation
     ));
 }
 

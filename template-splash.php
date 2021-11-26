@@ -17,16 +17,9 @@
 
 				<div class="flex flex-col w-full custom-h-screen items-center justify-center text-brand-dark">
 					<div class="flex flex-row w-full px-4 lg:px-0 items-center justify-center">
-						<?php if ( get_field( 'image_type', 'option' ) == 1 ) : ?>
-							<?php $branding_logo = get_field( 'branding_logo', 'option' ); ?>
-							<?php if ( $branding_logo ) : ?>
-								<img class="w-full lg:w-1/2" src="<?php echo esc_url( $branding_logo['url'] ); ?>" alt="<?php echo esc_attr( $branding_logo['alt'] ); ?>" />
-							<?php endif; ?>
-						<?php else : ?>
-							<?php $branding_logo_svg = get_field( 'branding_logo_svg', 'option' ); ?>
-							<?php if ( $branding_logo_svg ) : ?>
-								<img class="w-full lg:w-1/2" src="<?php echo esc_url( $branding_logo_svg['url'] ); ?>" alt="<?php echo esc_attr( $branding_logo_svg['alt'] ); ?>" />
-							<?php endif; ?>
+						<?php $branding_logo = get_field( 'branding_logo', 'option' ); ?>
+						<?php if ( $branding_logo ) : ?>
+							<img class="w-full lg:w-1/2" src="<?php echo esc_url( $branding_logo['url'] ); ?>" alt="<?php echo esc_attr( $branding_logo['alt'] ); ?>" />
 						<?php endif; ?>
 					</div>
 					<div class="flex flex-col w-full items-center justify-center px-4 lg:px-0 lg:w-1/2 lg:mx-auto my-0 lg:mt-12">
