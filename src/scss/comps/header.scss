@@ -1,15 +1,15 @@
 // menu and nav styles
 
 #header {
-    @apply h-32;
+    @apply h-24;
     position: fixed;
     transition: height 500ms ease-out 125ms, opacity 500ms ease-out 125ms;
     &.topped {
-        @apply bg-white h-16 lg:h-32 opacity-100;
+        @apply bg-white h-16 lg:h-24 opacity-100;
         transition: height 500ms ease-out 125ms, opacity 500ms ease-out 125ms;
     }
     &.header-onload {
-        @apply h-16 lg:h-32 opacity-100;
+        @apply h-16 lg:h-24 opacity-100;
         transition: height 500ms ease-out 125ms, opacity 500ms ease-out 125ms;
         animation-duration: 1000ms;
         animation-iteration-count: 1;
@@ -22,7 +22,7 @@
         transition: height 500ms ease-out 125ms, opacity 500ms ease-out 125ms;
         position: fixed;
         .custom-logo {
-          @apply transition-all duration-500 lg:h-12 lg:w-auto;
+          @apply transition-all duration-500 lg:h-14 lg:w-auto;
         }
         ul > li > a {
           @apply text-grey-dark;
@@ -38,7 +38,7 @@
         transition: height 500ms ease-out 0ms, opacity 500ms ease-out 0ms;
         position: fixed;
         .custom-logo {
-          @apply transition-all duration-500 lg:h-12 lg:w-auto;
+          @apply transition-all duration-500 lg:h-14 lg:w-auto;
         }
         ul > li > a {
           @apply text-grey-dark;
@@ -67,7 +67,7 @@
     transition: height 250ms ease-out 0ms, opacity 250ms ease-out 0ms;
   }
   .custom-logo {
-    @apply  transition-all ease-in duration-500 xl:h-24 w-auto;
+    @apply  transition-all ease-in duration-500 xl:h-20 w-auto;
   }
 }
 

@@ -3,13 +3,6 @@
   @apply flex flex-col px-6 lg:px-12 2xl:container 2xl:mx-auto;
 }
 
-section.paragraphs div p {
-  @apply mb-2 lg:mb-6;
-  &::last-child {
-    @apply mb-0;
-  }
-}
-
 // auto adjusted custom height for screen sizes. In combination with js/h-vh.js
 .custom-h-screen {
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
@@ -17,6 +10,10 @@ section.paragraphs div p {
   &.custom-h-screen-85 {
     height: 85vh; /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 85);
+  }
+  &.custom-h-screen-55 {
+    height: 55vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 55);
   }
   &.custom-h-screen-half {
     height: 50vh; /* Fallback for browsers that do not support Custom Properties */
@@ -35,6 +32,10 @@ section.paragraphs div p {
     &.custom-h-screen-85 {
       height: 85vh; /* Fallback for browsers that do not support Custom Properties */
       height: calc(var(--vh, 1vh) * 85);
+    }
+    &.custom-h-screen-55 {
+      height: 55vh; /* Fallback for browsers that do not support Custom Properties */
+      height: calc(var(--vh, 1vh) * 55);
     }
   }
 }

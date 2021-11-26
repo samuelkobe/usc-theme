@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
 	<main role="main">
-
 		<?php get_template_part('parts/_page-hero'); ?>
 			
 		<?php
@@ -20,18 +19,6 @@
 				include 'rows/row-' . $layout . '.php';
 			endwhile;
 		endif; ?>
-
-		<section class="contained items-center justify-center h-96 w-full bg-green-500">
-			<h1>Remove me - page.php</h1>
-		</section>
-
-		<section class="contained items-center justify-center h-96 w-full bg-blue-500">
-			<h1>Remove me - page.php</h1>
-		</section>
-
-		<section class="contained items-center justify-center h-96 w-full bg-yellow-500">
-			<h1>Remove me - page.php</h1>
-		</section>
 
 	</main>
 

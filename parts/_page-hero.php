@@ -7,6 +7,11 @@
             $background_image = get_sub_field( 'background_image' );
             $background_video = get_sub_field( 'background_video' );
             $button = 'button accent mt-4 md:mt-8 mb-2';
+			if ( get_sub_field( 'page_hero_height' ) == 1 ) :
+                $hero_height = 'lg:custom-h-screen custom-h-screen-85 min-h-96 lg:min-h-192';
+            else :
+                $hero_height = 'lg:custom-h-screen custom-h-screen-55 min-h-96 lg:min-h-96';
+			endif;
             if ( have_rows( 'background_blend_colour' ) ) :
                 while ( have_rows( 'background_blend_colour' ) ) : the_row(); 
                     $colour = get_sub_field( 'colours' );
@@ -25,7 +30,7 @@
                         </video>';
         ?>
     
-    <section class="flex relative w-full lg:custom-h-screen custom-h-screen-85 min-h-96 lg:min-h-192 overflow-hidden bg-brand-<?php echo $colour; ?>">
+    <section class="flex relative w-full <?php echo $hero_height ?> overflow-hidden bg-brand-<?php echo $colour; ?>">
         <div class="absolute left-0 top-0 h-full w-full bg-black z-10 opacity-20 pointer-events-none"></div>
         <div class="absolute left-0 bottom-0 h-3 w-full bg-brand-<?php echo $colour; ?> z-10 pointer-events-none"></div>
         <?php if ( get_sub_field( 'background_type' ) == 1 ) : ?>

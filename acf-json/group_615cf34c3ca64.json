@@ -16,6 +16,35 @@
                 "id": ""
             },
             "layouts": {
+                "layout_61a122daa2c8e": {
+                    "key": "layout_61a122daa2c8e",
+                    "name": "calendar_embed",
+                    "label": "Calendar Embed",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_61a122e2a2c8f",
+                            "label": "Calendar Embed Code",
+                            "name": "calendar_embed_code",
+                            "type": "wysiwyg",
+                            "instructions": "Add the Calendar shortcode here. If you do not know what this means please contact Web Ok Solutions Inc.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "text",
+                            "media_upload": 0,
+                            "toolbar": "full",
+                            "delay": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_619fec03f3d43": {
                     "key": "layout_619fec03f3d43",
                     "name": "paragraph_and_title",
@@ -58,7 +87,7 @@
                             "placeholder": "",
                             "maxlength": "",
                             "rows": "",
-                            "new_lines": "wpautop"
+                            "new_lines": "br"
                         }
                     ],
                     "min": "",
@@ -173,5 +202,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1637877565
+    "modified": 1637952791
 }
