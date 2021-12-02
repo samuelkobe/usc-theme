@@ -96,8 +96,8 @@
             "maxlength": ""
         },
         {
-            "key": "field_61043e9808606",
-            "label": "Footer",
+            "key": "field_61a813e0712ef",
+            "label": "Header",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -112,11 +112,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_5fcff9feffa4b",
-            "label": "Text or Logo File?",
-            "name": "text_or_logo_file_toggle",
+            "key": "field_61a813fd712f0",
+            "label": "Header button 1?",
+            "name": "header_button_1_toggle",
             "type": "true_false",
-            "instructions": "Toggle between using a Logo file or plain Text for the footer title.",
+            "instructions": "Toggle on an extra button link in the header. This button can be used to direct visitors to important pages.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -125,22 +125,22 @@
                 "id": ""
             },
             "message": "",
-            "default_value": 1,
+            "default_value": 0,
             "ui": 1,
-            "ui_on_text": "Logo",
-            "ui_off_text": "Test"
+            "ui_on_text": "On",
+            "ui_off_text": "Off"
         },
         {
-            "key": "field_5fcff9ddffa4a",
-            "label": "Footer Logo",
-            "name": "footer_logo",
-            "type": "image",
-            "instructions": "Add a footer logo.",
-            "required": 1,
+            "key": "field_61a8148c712f1",
+            "label": "Header button 2?",
+            "name": "header_button_2_toggle",
+            "type": "true_false",
+            "instructions": "Toggle on an extra button link in the header. This button can be used to direct visitors to important pages.",
+            "required": 0,
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5fcff9feffa4b",
+                        "field": "field_61a813fd712f0",
                         "operator": "==",
                         "value": "1"
                     }
@@ -151,29 +151,24 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "On",
+            "ui_off_text": "Off"
         },
         {
-            "key": "field_5fcffb694bd07",
-            "label": "Footer Title",
-            "name": "footer_title",
-            "type": "text",
-            "instructions": "Brand Title",
-            "required": 1,
+            "key": "field_61a8149f712f2",
+            "label": "Extra Button 1",
+            "name": "extra_button_1",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5fcff9feffa4b",
-                        "operator": "!=",
+                        "field": "field_61a813fd712f0",
+                        "operator": "==",
                         "value": "1"
                     }
                 ]
@@ -183,11 +178,51 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "Company Title",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "return_format": "array"
+        },
+        {
+            "key": "field_61a814ca712f4",
+            "label": "Extra Button 2",
+            "name": "extra_button_2",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61a813fd712f0",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_61a8148c712f1",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_61043e9808606",
+            "label": "Footer",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_60a030563c775",
@@ -287,6 +322,322 @@
             "media_upload": 0,
             "toolbar": "full",
             "delay": 0
+        },
+        {
+            "key": "field_61a6aba802c0e",
+            "label": "Live Stream Details",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_61a6ac8d44c60",
+            "label": "Make stream Live?",
+            "name": "stream_toggle",
+            "type": "true_false",
+            "instructions": "Use this to turn on the live stream section on the home page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Live",
+            "ui_off_text": "Off"
+        },
+        {
+            "key": "field_61a7ecdcb921d",
+            "label": "Stream video",
+            "name": "stream_video",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61a6ac8d44c60",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_61a7ecb0b921c",
+                    "label": "YouTube live?",
+                    "name": "youtube_toggle",
+                    "type": "true_false",
+                    "instructions": "YouTube live for this stream?",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Yes",
+                    "ui_off_text": "No"
+                },
+                {
+                    "key": "field_61a80b0298bac",
+                    "label": "YouTube live link",
+                    "name": "youtube_live_link",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_61a6ac8d44c60",
+                                "operator": "==",
+                                "value": "1"
+                            },
+                            {
+                                "field": "field_61a7ecb0b921c",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_61a7eab4ce481",
+                    "label": "YouTube live embed code",
+                    "name": "youtube_live_embed_code",
+                    "type": "wysiwyg",
+                    "instructions": "Add YouTube live embed code here.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_61a6ac8d44c60",
+                                "operator": "==",
+                                "value": "1"
+                            },
+                            {
+                                "field": "field_61a7ecb0b921c",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "text",
+                    "media_upload": 0,
+                    "toolbar": "full",
+                    "delay": 0
+                }
+            ]
+        },
+        {
+            "key": "field_61a7eb03fb91d",
+            "label": "Stream details",
+            "name": "stream_details",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61a6ac8d44c60",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_61a6abb602c0f",
+                    "label": "Stream title",
+                    "name": "stream_title",
+                    "type": "text",
+                    "instructions": "Add a short title for the live stream here (max 64 characters).",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_61a6ac8d44c60",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 64
+                },
+                {
+                    "key": "field_61a6abc302c10",
+                    "label": "Stream content",
+                    "name": "stream_content",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_61a6ac8d44c60",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 4,
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_61a6abc402c11",
+                    "label": "Zoom button",
+                    "name": "button_link",
+                    "type": "link",
+                    "instructions": "Add zoom details here.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_61a6ac8d44c60",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                }
+            ]
+        },
+        {
+            "key": "field_61a0450ef4110",
+            "label": "Open Graph",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5da75e896ab1c",
+            "label": "Open Graph Title",
+            "name": "open_graph_title",
+            "type": "text",
+            "instructions": "Add a title for Open Graph (Facebook sharing details).",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5da75ed86ab1d",
+            "label": "Open Graph URL",
+            "name": "open_graph_url",
+            "type": "url",
+            "instructions": "Add the expected final URL for the website's homepage for Open Graph (Facebook sharing details).",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5da75f0d6ab1e",
+            "label": "Open Graph Image",
+            "name": "open_graph_image",
+            "type": "image",
+            "instructions": "Add a image for Open Graph (Facebook sharing details). Make sure to add this at the production level (live site) so the URL is correct.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_61a042244b1e3",
@@ -423,81 +774,6 @@
             "maxlength": 256,
             "rows": 4,
             "new_lines": ""
-        },
-        {
-            "key": "field_61a0450ef4110",
-            "label": "Open Graph",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5da75e896ab1c",
-            "label": "Open Graph Title",
-            "name": "open_graph_title",
-            "type": "text",
-            "instructions": "Add a title for Open Graph (Facebook sharing details).",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5da75ed86ab1d",
-            "label": "Open Graph URL",
-            "name": "open_graph_url",
-            "type": "url",
-            "instructions": "Add the expected final URL for the website's homepage for Open Graph (Facebook sharing details).",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
-        },
-        {
-            "key": "field_5da75f0d6ab1e",
-            "label": "Open Graph Image",
-            "name": "open_graph_image",
-            "type": "image",
-            "instructions": "Add a image for Open Graph (Facebook sharing details). Make sure to add this at the production level (live site) so the URL is correct.",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
         }
     ],
     "location": [
@@ -518,5 +794,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1637893464
+    "modified": 1638405526
 }

@@ -42,6 +42,7 @@ module.exports = {
         '075': '3px',
         '1/12': '8.3333%',
         '1/6': '16.6667%',
+        'video': '56.6667%',
       },
       transformOrigin: {
         'hamburger': '0.475rem',

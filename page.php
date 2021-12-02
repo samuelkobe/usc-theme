@@ -5,6 +5,7 @@
 			
 		<?php
 		if (is_front_page()) {
+			get_template_part('parts/_live-stream'); 
 			get_template_part('parts/_page-notices'); 
 		} else {
 			//nothing should be shown unless on front page.

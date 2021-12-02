@@ -21,6 +21,9 @@ body section a {
             background-color: #C66A46;
         }
     }
+    &.small {
+      @apply lg:min-w-0 text-sm xl:text-base whitespace-nowrap py-2 px-3 xl:py-2 xl:px-3 ;
+    }
 }
 
 //these styles are used to override the Swiper.js navigation buttons

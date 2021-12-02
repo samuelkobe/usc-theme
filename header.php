@@ -57,9 +57,52 @@
 							<!-- /button -->
 						</div>
 
-						<div id="menu" class="fixed lg:relative top-0 right-0 order-3 lg:order-2 w-full lg:w-auto lg:h-auto lg:min-h-0 z-10 lg:z-20 flex flex-col lg:flex-row lg:justify-end shadow-lg lg:shadow-none p-6 pt-36 lg:p-0 transform translate-x-full lg:transform-none lg:translate-x-0 transition-transform duration-0 lg:duration-0 lg:opacity-100 bg-grey-light lg:bg-transparent">
-							<nav class="flex flex-row items-center justify-end text-grey-dark" role="navigation">
+						<div id="menu" class="fixed lg:relative top-0 right-0 order-3 lg:order-2 w-full lg:w-auto lg:h-auto lg:min-h-0 z-10 lg:z-20 flex flex-col lg:flex-row lg:justify-end shadow-lg lg:shadow-none p-6 pt-24 lg:p-0 transform translate-x-full lg:transform-none lg:translate-x-0 transition-transform duration-0 lg:duration-0 lg:opacity-100 bg-grey-light lg:bg-transparent">
+							<nav class="flex flex-col lg:flex-row items-center justify-end text-grey-dark text-center lg:text-left" role="navigation">
+								
 								<?php webokstarter_nav(); ?>
+
+								<div class="w-full lg:w-auto flex flex-col lg:flex-row items-center lg:items-start lg:ml-4 mb-20 lg:mb-0">
+
+									<?php if ( get_field( 'header_button_1_toggle', 'option' ) == 1 ) : ?>
+										<?php $button = 'button main small mt-4 lg:mt-0 lg:mx-1';?>
+										<?php $extra_button_1 = get_field( 'extra_button_1', 'option' ); ?>
+										<?php if ( $extra_button_1 ) : ?>
+											<div class="flex flex-row relative">
+												<a class="<?php echo $button; ?>" href="<?php echo esc_url( $extra_button_1['url'] ); ?>" target="<?php echo esc_attr( $extra_button_1['target'] ); ?>"><?php echo esc_html( $extra_button_1['title'] ); ?></a>
+											</div>
+										<?php endif; ?>
+									<?php endif; ?>
+
+									<?php if ( get_field( 'header_button_2_toggle', 'option' ) == 1 ) : ?>
+										<?php $button = 'button main small mt-4 lg:mt-0 lg:mx-1';?>
+										<?php $extra_button_2 = get_field( 'extra_button_2', 'option' ); ?>
+										<?php if ( $extra_button_2 ) : ?>
+											<div class="flex flex-row relative">
+												<a class="<?php echo $button; ?>" href="<?php echo esc_url( $extra_button_2['url'] ); ?>" target="<?php echo esc_attr( $extra_button_2['target'] ); ?>"><?php echo esc_html( $extra_button_2['title'] ); ?></a>
+											</div>
+										<?php endif; ?>
+									<?php endif; ?>
+
+
+									<?php if ( get_field( 'stream_toggle', 'option' ) == 1 ) : // live stream on ?>
+										<?php while ( have_rows( 'stream_video', 'option' ) ) : the_row(); ?>
+											<?php if ( get_sub_field( 'youtube_toggle' ) == 1 ) : ?>
+												
+											<?php $button = 'button accent small mt-4 lg:mt-0 lg:mx-1';?>
+											<?php $youtube_live_link = get_sub_field( 'youtube_live_link' ); ?>
+											<?php if ( $youtube_live_link ) : ?>
+												<div class="flex flex-row relative">
+													<a class="<?php echo $button; ?>" href="<?php echo esc_url( $youtube_live_link['url'] ); ?>" target="<?php echo esc_attr( $youtube_live_link['target'] ); ?>"><?php echo esc_html( $youtube_live_link['title'] ); ?></a>
+												</div>
+											<?php endif; ?>
+
+											<?php endif; ?>
+										<?php endwhile; ?>	
+									<?php endif; ?>
+									
+								</div>
+
 							</nav>
 						</div>
 
