@@ -16,6 +16,7 @@ module.exports = {
         },
         grey: {
           light: '#F2F2F2',
+          alt: '#D6D6D6',
           medium: '#B4B4B4',
           dark: '#2E2C2C',
         }
@@ -23,6 +24,8 @@ module.exports = {
       minWidth: {
         '32': '8rem',
         '40': '10rem',
+        '64': '16rem',
+        '1/2': '50%',
       },
       minHeight: {
         '96': '24rem',

@@ -35,7 +35,7 @@
         <div class="absolute left-0 bottom-0 h-3 w-full bg-brand-<?php echo $colour; ?> z-10 pointer-events-none"></div>
         <?php if ( get_sub_field( 'background_type' ) == 1 ) : ?>
             <?php if ( $background_image ) : ?>
-                <img class="absolute top-0 left-0 w-full h-full object-cover mix-blend-luminosity" src="<?php echo esc_url( $background_image['url'] ); ?>" alt="<?php echo esc_attr( $background_image['alt'] ); ?>" />
+                <img class="absolute top-16 left-0 w-full h-full object-cover mix-blend-luminosity" src="<?php echo esc_url( $background_image['url'] ); ?>" alt="<?php echo esc_attr( $background_image['alt'] ); ?>" />
             <?php endif; ?> 
         <?php else : ?>
             <?php echo $video;?>
@@ -80,7 +80,7 @@
 
 <?php else : ?>
 
-    <section class="mt-4 xl:my-16 object-reveal-short">
+    <section class="mt-4 xl:mt-16 xl:mb-6 object-reveal-short">
         <div class="flex contained">
             <h1 class="text-3xl sm:text-4xl xl:text-5xl xl:leading-snug mb-6 lg:mb-16 font-title font-bold text-brand-dark lg:text-center"><?php the_title(); ?></h1>
         </div>

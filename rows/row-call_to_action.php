@@ -1,6 +1,6 @@
 <section class="container mx-auto px-6 lg:px-0">
 
-    <div class="flex flex-col items-center w-full lg:w-5/6 lg:mx-1/12 mt-16 lg:mt-0 pt-16 lg:pt-24 border-t-2 border-grey-light object-reveal-long">
+    <div class="flex flex-col items-center w-full lg:w-5/6 lg:mx-1/12 2xl:w-2/3 2xl:mx-1/6 mt-4 lg:mt-0 pt-16 lg:pt-24 border-t-2 border-grey-light object-reveal-long">
 
         <h2 class="font-title font-bold text-2xl lg:text-4xl text-brand-dark mb-2 lg:mb-4"><?php the_sub_field( 'title' ); ?></h2>
         <p class="text-base lg:text-lg lg:leading-relaxed text-center"><?php the_sub_field( 'content' ); ?></p>

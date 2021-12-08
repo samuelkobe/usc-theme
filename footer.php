@@ -6,19 +6,19 @@
 
 					<div class="w-full flex lg:flex-row flex-wrap border-grey-light border-b-2 py-6 lg:py-14">
 						<div class="w-1/2 lg:w-1/6 order-2 lg:order-1 mb-8 lg:mb-0">
-							<h4 class="text-lg lg:text-2xl text-brand-main font-bold mb-4 lg:mb-6">Resources</h4>
+							<h3 class="text-lg lg:text-2xl text-brand-main font-bold mb-4 lg:mb-6">Resources</h4>
 							<div class="w-full flex flex-col">
 								<?php footer_nav_one(); ?>
 							</div>
 						</div>
 						<div class="w-1/2 lg:w-1/6 order-3 lg:order-2 mb-8 lg:mb-0">
-							<h4 class="text-lg lg:text-2xl text-brand-main font-bold mb-4 lg:mb-6">Give</h4>
+							<h3 class="text-lg lg:text-2xl text-brand-main font-bold mb-4 lg:mb-6">Give</h4>
 							<div class="w-full flex flex-col">
 								<?php footer_nav_two(); ?>
 							</div>
 						</div>
 						<div class="w-full flex-col items-start lg:w-1/6 order-4 lg:order-3">
-							<h4 class="text-lg lg:text-2xl text-brand-main font-bold mb-4 lg:mb-6">Follow us</h4>
+							<h3 class="text-lg lg:text-2xl text-brand-main font-bold mb-4 lg:mb-6">Follow us</h4>
 							<?php if ( have_rows( 'social_media', 'option' ) ) : ?>
 								<?php while ( have_rows( 'social_media', 'option' ) ) : the_row(); ?>
 								<a class="flex flex-row items-center mr-4 lg:mx-0" href="<?php the_sub_field( 'url' ); ?>" target="_blank" rel="noreferrer">
@@ -34,7 +34,7 @@
 							<?php endif; ?>
 						</div>
 						<div class="w-full lg:w-1/3 lg:mx-1/12 order-1 lg:order-4 mb-8 lg:mb-0">
-							<h4 class="text-lg lg:text-2xl text-brand-main font-bold mb-4 lg:mb-7">Newsletter</h4>
+							<h3 class="text-lg lg:text-2xl text-brand-main font-bold mb-4 lg:mb-7">Newsletter</h4>
 							<?php the_field( 'newsletter_form_embed', 'option' ); ?>
 						</div>
 					</div>

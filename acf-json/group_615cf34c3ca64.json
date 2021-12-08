@@ -56,7 +56,7 @@
                             "label": "Title",
                             "name": "p_title",
                             "type": "text",
-                            "instructions": "Add a title for the paragraph(s) below (Max 50 characters).",
+                            "instructions": "Add a title for the paragraph(s) below (Max 128 characters).",
                             "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -68,7 +68,7 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "maxlength": 50
+                            "maxlength": 128
                         },
                         {
                             "key": "field_619fec3cf3d45",
@@ -93,18 +93,345 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_61a81d08e2de0": {
-                    "key": "layout_61a81d08e2de0",
-                    "name": "call_to_action",
-                    "label": "Call to action",
+                "layout_61afe57d59df5": {
+                    "key": "layout_61afe57d59df5",
+                    "name": "split",
+                    "label": "Split Content",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_61a81d3fe2de1",
-                            "label": "Title",
-                            "name": "title",
+                            "key": "field_61afe58d59df6",
+                            "label": "Left Grouping",
+                            "name": "left_grouping",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_61afe5d0ad41c",
+                                    "label": "Content Type?",
+                                    "name": "content_type_left",
+                                    "type": "true_false",
+                                    "instructions": "Choose between a <b>Title<\/b> and <b>Paragraph<\/b> or a <b>Title, Paragraph<\/b> and <b>List<\/b> combination for the left side of this row.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 1,
+                                    "ui": 1,
+                                    "ui_on_text": "Paragraph",
+                                    "ui_off_text": "List"
+                                },
+                                {
+                                    "key": "field_61afe89455d6e",
+                                    "label": "Title",
+                                    "name": "left_title",
+                                    "type": "text",
+                                    "instructions": "Add your title here(Max 128 characters).",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": 128
+                                },
+                                {
+                                    "key": "field_61afe8c555d6f",
+                                    "label": "Paragraph",
+                                    "name": "paragraph",
+                                    "type": "textarea",
+                                    "instructions": "Add your paragraph here (Max 512 characters).",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": 512,
+                                    "rows": 4,
+                                    "new_lines": "br"
+                                },
+                                {
+                                    "key": "field_61afe98b55d74",
+                                    "label": "List",
+                                    "name": "list",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_61afe5d0ad41c",
+                                                "operator": "!=",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "collapsed": "field_61afe9a155d75",
+                                    "min": 1,
+                                    "max": 12,
+                                    "layout": "block",
+                                    "button_label": "Add item",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_61afe9a155d75",
+                                            "label": "List Item",
+                                            "name": "list_item",
+                                            "type": "text",
+                                            "instructions": "Add your list item here (Max 256 characters).",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": 256
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_61afe5a659df7",
+                            "label": "Right Grouping",
+                            "name": "right_grouping",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_61afe675c7f5d",
+                                    "label": "Content Type?",
+                                    "name": "content_type_right",
+                                    "type": "true_false",
+                                    "instructions": "Choose between a <b>Subtitle<\/b> and <b>Buttons<\/b> or a <b>Subtitle<\/b> and <b>List<\/b> combination for the right side of this row.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 1,
+                                    "ui": 1,
+                                    "ui_on_text": "Buttons",
+                                    "ui_off_text": "List"
+                                },
+                                {
+                                    "key": "field_61afefaa67c1c",
+                                    "label": "Title",
+                                    "name": "right_title",
+                                    "type": "text",
+                                    "instructions": "Add your title here(Max 64 characters).",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": 64
+                                },
+                                {
+                                    "key": "field_61aff092495b8",
+                                    "label": "Buttons",
+                                    "name": "buttons",
+                                    "type": "repeater",
+                                    "instructions": "Add multiple buttons here.",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_61afe675c7f5d",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "collapsed": "field_61aff0a0495b9",
+                                    "min": 1,
+                                    "max": 3,
+                                    "layout": "block",
+                                    "button_label": "Add button",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_61aff0a0495b9",
+                                            "label": "Button",
+                                            "name": "button_link",
+                                            "type": "link",
+                                            "instructions": "Add button details here and remember to chose a colour.",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "50",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "return_format": "array"
+                                        },
+                                        {
+                                            "key": "field_61aff0f6574ae",
+                                            "label": "Select one of these",
+                                            "name": "button_colour",
+                                            "type": "clone",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "clone": [
+                                                "group_6198317a35aac"
+                                            ],
+                                            "display": "seamless",
+                                            "layout": "block",
+                                            "prefix_label": 1,
+                                            "prefix_name": 0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "key": "field_61b0001895baf",
+                                    "label": "Single line of content",
+                                    "name": "single_line_of_content",
+                                    "type": "text",
+                                    "instructions": "Add short description of what is to follow (Max 64 characters).",
+                                    "required": 1,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_61afe675c7f5d",
+                                                "operator": "!=",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": 64
+                                },
+                                {
+                                    "key": "field_61b0007795bb0",
+                                    "label": "List",
+                                    "name": "list",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_61afe675c7f5d",
+                                                "operator": "!=",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "collapsed": "field_61afe9a155d75",
+                                    "min": 1,
+                                    "max": 12,
+                                    "layout": "block",
+                                    "button_label": "Add item",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_61b0007795bb1",
+                                            "label": "List Item",
+                                            "name": "list_item",
+                                            "type": "text",
+                                            "instructions": "Add your list item here (Max 256 characters).",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": 256
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_61b0099f76e55": {
+                    "key": "layout_61b0099f76e55",
+                    "name": "button_cluster",
+                    "label": "Button cluster",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_61b009b776e56",
+                            "label": "Cluster title",
+                            "name": "cluster_title",
                             "type": "text",
-                            "instructions": "Add a short title prompting users to get in touch with you (Max 48 characters).",
+                            "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -116,14 +443,14 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "maxlength": 48
+                            "maxlength": ""
                         },
                         {
-                            "key": "field_61a81d4ae2de3",
-                            "label": "Content",
-                            "name": "content",
-                            "type": "textarea",
-                            "instructions": "Add a short call to action to prompt users to get in touch with you (Max 128 characters).",
+                            "key": "field_61b009c376e57",
+                            "label": "Cluster description",
+                            "name": "cluster_description",
+                            "type": "text",
+                            "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -133,7 +460,112 @@
                             },
                             "default_value": "",
                             "placeholder": "",
-                            "maxlength": 128,
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_61b009ef76e59",
+                            "label": "Buttons",
+                            "name": "buttons",
+                            "type": "repeater",
+                            "instructions": "Add multiple buttons here.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "field_61aff0a0495b9",
+                            "min": 1,
+                            "max": 6,
+                            "layout": "block",
+                            "button_label": "Add button",
+                            "sub_fields": [
+                                {
+                                    "key": "field_61b009ef76e5a",
+                                    "label": "Button",
+                                    "name": "button_link",
+                                    "type": "link",
+                                    "instructions": "Add button details here and remember to chose a colour.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array"
+                                },
+                                {
+                                    "key": "field_61b009ef76e5b",
+                                    "label": "Select one of these",
+                                    "name": "button_colour",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "group_6198317a35aac"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 1,
+                                    "prefix_name": 0
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_61a81d08e2de0": {
+                    "key": "layout_61a81d08e2de0",
+                    "name": "call_to_action",
+                    "label": "Call to action",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_61a81d3fe2de1",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "Add a short title prompting users to get in touch with you (Max 64 characters).",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": 64
+                        },
+                        {
+                            "key": "field_61a81d4ae2de3",
+                            "label": "Content",
+                            "name": "content",
+                            "type": "textarea",
+                            "instructions": "Add a short call to action to prompt users to get in touch with you (Max 256 characters).",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": 256,
                             "rows": 2,
                             "new_lines": ""
                         },
@@ -151,6 +583,108 @@
                                 "id": ""
                             },
                             "return_format": "array"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_61af9c7ddd98d": {
+                    "key": "layout_61af9c7ddd98d",
+                    "name": "form",
+                    "label": "Form",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_61afde767ad2d",
+                            "label": "Content with form?",
+                            "name": "content_with_form",
+                            "type": "true_false",
+                            "instructions": "Toggle the title and description content on or off. This should be off if the form is the top row on the page.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "On",
+                            "ui_off_text": "Off"
+                        },
+                        {
+                            "key": "field_61afbfb77cae3",
+                            "label": "Form title",
+                            "name": "form_title",
+                            "type": "text",
+                            "instructions": "Add a short title to the form here (Max 64 characters).",
+                            "required": 1,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61afde767ad2d",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": 64
+                        },
+                        {
+                            "key": "field_61afbfe07cae4",
+                            "label": "Form content",
+                            "name": "form_content",
+                            "type": "text",
+                            "instructions": "Add a short description to the form here (Max 128 characters).",
+                            "required": 1,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61afde767ad2d",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": 128
+                        },
+                        {
+                            "key": "field_61af9c88dd98e",
+                            "label": "Form embed",
+                            "name": "form_embed",
+                            "type": "wysiwyg",
+                            "instructions": "Paste the shortcode from a contact form here. A shortcode looks like this: \"[shortcode]\". You can find these by selecting <b>Contact<\/b> in the left sidebar here in the backend of you website.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "text",
+                            "media_upload": 0,
+                            "toolbar": "full",
+                            "delay": 0
                         }
                     ],
                     "min": "",
@@ -265,5 +799,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1638408407
+    "modified": 1638930509
 }

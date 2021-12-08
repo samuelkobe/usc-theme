@@ -15,10 +15,28 @@ body section a {
             background-color: #1D757B;
         }
     }
+    &.dark {
+        @apply bg-brand-dark;
+        &:hover {
+            background-color: #394952;
+        }
+    }
     &.accent {
         @apply bg-brand-accent;
         &:hover {
             background-color: #C66A46;
+        }
+    }
+    &.neutral {
+        @apply bg-brand-neutral;
+        &:hover {
+            background-color: #6E6D6B;
+        }
+    }
+    &.black {
+        @apply bg-brand-black;
+        &:hover {
+            background-color: #020202;
         }
     }
     &.small {
