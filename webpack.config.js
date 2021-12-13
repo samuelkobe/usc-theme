@@ -32,7 +32,8 @@ module.exports = (env) => {
           // If using the Local App by Flywheel or similar to produce local domain for your project change the details below to match (remove proxy if SSL is not required).
           host: 'usc.local',
           proxy: 'https://usc.local',
-          files: [{
+          files: [
+            {
               match: ['./*.php'],
               fn: function (event, file) {
                   if (event === "change") {

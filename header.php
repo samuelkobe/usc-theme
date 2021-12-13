@@ -65,7 +65,7 @@
 								<div class="w-full lg:w-auto flex flex-col lg:flex-row items-center lg:items-start lg:ml-4 mb-20 lg:mb-0">
 
 									<?php if ( get_field( 'header_button_1_toggle', 'option' ) == 1 ) : ?>
-										<?php $button = 'button main small mt-4 lg:mt-0 lg:mx-1';?>
+										<?php $button = 'button main small mt-4 lg:mt-0 lg:mx-2';?>
 										<?php $extra_button_1 = get_field( 'extra_button_1', 'option' ); ?>
 										<?php if ( $extra_button_1 ) : ?>
 											<div class="flex flex-row relative">
@@ -75,7 +75,7 @@
 									<?php endif; ?>
 
 									<?php if ( get_field( 'header_button_2_toggle', 'option' ) == 1 ) : ?>
-										<?php $button = 'button main small mt-4 lg:mt-0 lg:mx-1';?>
+										<?php $button = 'button main small mt-4 lg:mt-0 lg:mx-2';?>
 										<?php $extra_button_2 = get_field( 'extra_button_2', 'option' ); ?>
 										<?php if ( $extra_button_2 ) : ?>
 											<div class="flex flex-row relative">

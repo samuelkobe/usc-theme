@@ -1,9 +1,9 @@
 module.exports = {
-  purge:  [
+  content:  [
     './**/*.php', 
     './**/*.css',
   ],
-  darkMode: false, // or 'media' or 'class'
+  media: false, // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
@@ -29,7 +29,7 @@ module.exports = {
       },
       minHeight: {
         '96': '24rem',
-        '192': '48rem'
+        '192': '48rem',
       },
       transitionDuration: {
         '0': '0ms',
@@ -38,6 +38,10 @@ module.exports = {
         sans: ["Lato", "sans-serif"],
         title: ["Lato", "sans-serif"],
         button: ["Nunito", "sans-serif"]
+      },
+      height: {
+        '128': '32rem',
+        'full-plus': 'calc(100% + 12rem)',
       },
       spacing: {
         '025': '1px',

@@ -13,7 +13,7 @@
                             $button_link = get_sub_field( 'button_link' );
                         ?>            
                         <?php if ( $button_link ) : ?>
-                        <div class="flex flex-row justify-center relative object-reveal-long">
+                        <div class="flex flex-row justify-center relative">
                             <a class="<?php echo $button . " " . $button_colour?>" href="<?php echo esc_url( $button_link['url'] ); ?>" target="<?php echo esc_attr( $button_link['target'] ); ?>"><?php echo esc_html( $button_link['title'] ); ?></a>
                         </div>
                         <?php endif; ?>
