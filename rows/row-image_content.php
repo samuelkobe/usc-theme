@@ -18,7 +18,7 @@
                             <?php $image = get_sub_field( 'image' ); ?>
                             <?php if ( $image ) : ?>
                                 <div class="w-full h-full relative">
-                                    <img class="w-full h-96 lg:w-auto xl:h-128 object-cover rounded" src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
+                                    <img class="w-full h-108 xl:h-128 object-cover rounded" src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
                                     <div class="absolute left-0 -bottom-1 h-3 w-full lg:rounded-b bg-brand-<?php echo $colour; ?> z-10 pointer-events-none"></div>
                                 </div>
                             <?php endif; ?>
@@ -29,7 +29,10 @@
                 <div class="w-full lg:w-2/3 p-8 lg:px-16 lg:py-0">
                     <?php if ( have_rows( 'content_settings' ) ) : ?>
                         <?php while ( have_rows( 'content_settings' ) ) : the_row(); ?>
-                            <h2 class="text-xl sm:text-3xl xl:text-4xl xl:leading-snug font-title font-bold text-brand-dark text-left mb-4 lg:mb-6"><?php the_sub_field( 'title' ); ?></h2>
+                            <h2 class="text-2xl lg:text-3xl 2xl:text-4xl xl:leading-snug font-title font-bold text-brand-dark text-left mb-8 lg:mb-12 2xl:mb-14 relative">
+                                <?php the_sub_field( 'title' ); ?>
+                                <span class="absolute left-0 -bottom-4 lg:-bottom-7 h-1 lg:h-2 w-12 lg:w-16 rounded bg-brand-<?php echo $colour; ?> z-10 pointer-events-none"></span>
+                            </h2>
                             <p class="text-base lg:text-xl"><?php the_sub_field( 'content' ); ?></p>
                         <?php endwhile; ?>
                     <?php endif; ?>

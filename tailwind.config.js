@@ -30,6 +30,7 @@ module.exports = {
       minHeight: {
         '96': '24rem',
         '192': '48rem',
+        '35vh': '35vh',
       },
       transitionDuration: {
         '0': '0ms',
@@ -40,6 +41,7 @@ module.exports = {
         button: ["Nunito", "sans-serif"]
       },
       height: {
+        '108': '27rem',
         '128': '32rem',
         'full-plus': 'calc(100% + 12rem)',
       },
@@ -47,6 +49,7 @@ module.exports = {
         '025': '1px',
         '05': '2px',
         '075': '3px',
+        '1/24': '4.1667%',
         '1/12': '8.3333%',
         '1/6': '16.6667%',
         'video': '56.6667%',
@@ -71,7 +74,7 @@ module.exports = {
       borderColor: ['even'],
       border: ['even'],
       width: ['even'],
-      margin: ['even'],
+      margin: ['even', 'last'],
       padding: ['even'],
       outline: ['focus'],
       boxShadow: ['focus'],
