@@ -433,6 +433,83 @@ function clear_nav_menu_item_class($classes, $item, $args) {
   }
 }
 
+/*------------------------------------*\
+	Custom Services Post Type
+\*------------------------------------*/
+
+function create_post_type_services()
+{
+    register_taxonomy_for_object_type('category', 'service'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'service');
+    register_post_type('service', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Services', 'service'),
+            'singular_name' => __('Service', 'service'),
+            'add_new' => __('Add Service', 'service'),
+            'add_new_item' => __('Add New Service', 'service'),
+            'edit' => __('Edit', 'service'),
+            'edit_item' => __('Edit Service', 'service'),
+            'new_item' => __('New Service', 'service'),
+            'view' => __('View Service', 'service'),
+            'view_item' => __('View Service', 'service'),
+            'search_items' => __('Search Services', 'service'),
+            'not_found' => __('No Services found', 'service'),
+            'not_found_in_trash' => __('No Services found in Trash', 'service')
+        ),
+        'has_archive' => true,
+        'public' => true,
+        'menu_position' => 4,
+        'rewrite' => array(
+          'slug' => 'services'
+        ),
+        'menu_icon' => 'dashicons-star-filled',
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'supports' => array(
+            'title',
+            'editor',
+            'thumbnail'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array(
+            'post_tag',
+            'category',
+        ) // Add Category and Post Tags support
+    ));
+}
+
+/*------------------------------------*\
+	Renamed posts to events
+\*------------------------------------*/
+
+//rename posts to events
+function revcon_change_post_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'Events';
+    $submenu['edit.php'][5][0] = 'Events';
+    $submenu['edit.php'][10][0] = 'Add Events';
+    $submenu['edit.php'][16][0] = 'Events Tags';
+}
+function revcon_change_post_object() {
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = 'Events';
+    $labels->singular_name = 'Event';
+    $labels->add_new = 'Add Event';
+    $labels->add_new_item = 'Add Event';
+    $labels->edit_item = 'Edit Event';
+    $labels->new_item = 'Event';
+    $labels->view_item = 'View Event';
+    $labels->search_items = 'Search Event';
+    $labels->not_found = 'No Event found';
+    $labels->not_found_in_trash = 'No Event found in Trash';
+    $labels->all_items = 'All Events';
+    $labels->menu_name = 'Event';
+    $labels->name_admin_bar = 'Event';
+}
+
+
 /* ####### Actions + Filters + ShortCodes ####### */
 
 // Add Actions
@@ -442,6 +519,9 @@ add_action('wp_footer', 'footer_scripts'); // Add custom scripts to wp_footer
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'styles_sheet'); // Add Theme Stylesheet
 add_action('init', 'register_menu'); // Add Menus
+add_action( 'admin_menu', 'revcon_change_post_label' ); // rename posts -> events
+add_action( 'init', 'revcon_change_post_object' ); // rename posts -> events
+add_action('init', 'create_post_type_services'); // Add Services Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'webokstarter_wp_pagination'); // Add the Pagination
 
