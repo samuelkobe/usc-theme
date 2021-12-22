@@ -1,5 +1,5 @@
 			<!-- footer -->
-			<footer class="footer bg-grey-dark text-white mt-16 lg:mt-32" role="contentinfo">
+			<footer class="footer bg-grey-dark text-white mt-16 lg:mt-32 object-reveal-long" role="contentinfo">
 
 
 				<div class="contained">
@@ -21,7 +21,7 @@
 							<h3 class="text-lg lg:text-2xl text-brand-main font-bold mb-4 lg:mb-6">Follow us</h4>
 							<?php if ( have_rows( 'social_media', 'option' ) ) : ?>
 								<?php while ( have_rows( 'social_media', 'option' ) ) : the_row(); ?>
-								<a class="flex flex-row items-center mr-4 lg:mx-0" href="<?php the_sub_field( 'url' ); ?>" target="_blank" rel="noreferrer">
+								<a class="flex flex-row items-center mr-4 lg:mx-0 hover:text-brand-accent transition-colors duration-300" href="<?php the_sub_field( 'url' ); ?>" target="_blank" rel="noreferrer">
 									<?php $icon = get_sub_field( 'icon' ); ?>
 									<?php if ( $icon ) : ?>
 										<img width='24' height='24' class="w-6 object-contain" src="<?php echo esc_url( $icon['url'] ); ?>" alt="<?php echo esc_attr( $icon['alt'] ); ?>" />

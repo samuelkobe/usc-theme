@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 	<main role="main">
+		<div class="w-full h-128 bg-brand-main"></div>
 	<!-- section -->
 	<section>
 

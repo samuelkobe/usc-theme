@@ -962,6 +962,25 @@
                                 "id": ""
                             },
                             "return_format": "array"
+                        },
+                        {
+                            "key": "field_61bbd8d17b587",
+                            "label": "Border?",
+                            "name": "border_toggle",
+                            "type": "true_false",
+                            "instructions": "Toggle the top border of this row on or off.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "On",
+                            "ui_off_text": "Off"
                         }
                     ],
                     "min": "",
@@ -1657,6 +1676,151 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_61ba7fafe3f81": {
+                    "key": "layout_61ba7fafe3f81",
+                    "name": "services_embed",
+                    "label": "Services Embed",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_61ba9d9fde593",
+                            "label": "Services section title",
+                            "name": "services_section_title",
+                            "type": "text",
+                            "instructions": "Add a short title for the section here (Max 64 characters).",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Universal Spiritualist Centre Services",
+                            "placeholder": "Universal Spiritualist Centre Services",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": 64
+                        },
+                        {
+                            "key": "field_61ba840337915",
+                            "label": "Services",
+                            "name": "services",
+                            "type": "post_object",
+                            "instructions": "Select the services you would like to show up on the Services page here.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "service"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "multiple": 1,
+                            "return_format": "object",
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_61baa0403f923",
+                            "label": "Section button?",
+                            "name": "section_button_toggle",
+                            "type": "true_false",
+                            "instructions": "Add a button to the bottom of this section if want to direct users to a specific page.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "Yes",
+                            "ui_off_text": "No"
+                        },
+                        {
+                            "key": "field_61baa08ece572",
+                            "label": "No button",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61baa0403f923",
+                                        "operator": "!=",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "There is no button currently. That is ok, by default it is turned off.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_61baa0bece573",
+                            "label": "Button",
+                            "name": "button_link",
+                            "type": "link",
+                            "instructions": "Select a page to direct the user to.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61baa0403f923",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_61bbdd1e6a0e4": {
+                    "key": "layout_61bbdd1e6a0e4",
+                    "name": "events_embed",
+                    "label": "Events Embed",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_61bbdd426a0e5",
+                            "label": "Upcoming events",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "By adding this row all upcoming events are automatically added to this page.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Content",
@@ -1698,5 +1862,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1639600711
+    "modified": 1639702137
 }

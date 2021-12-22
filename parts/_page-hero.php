@@ -8,7 +8,7 @@
             $background_video = get_sub_field( 'background_video' );
             $button = 'button accent mt-4 md:mt-8 mb-2';
 			if ( get_sub_field( 'page_hero_height' ) == 1 ) :
-                $hero_height = 'lg:custom-h-screen custom-h-screen-85 min-h-96 lg:min-h-192';
+                $hero_height = 'lg:custom-h-screen custom-h-screen-80 min-h-96 lg:min-h-160 xl:min-h-192';
             else :
                 $hero_height = 'lg:custom-h-screen custom-h-screen-55 min-h-96 lg:min-h-96 mb-8 mb-12';
 			endif;

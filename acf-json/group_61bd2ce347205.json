@@ -1,0 +1,601 @@
+{
+    "key": "group_61bd2ce347205",
+    "title": "Event Calendar Fields",
+    "fields": [
+        {
+            "key": "field_61c254d19255a",
+            "label": "Event details",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_61be4531bf7ed",
+            "label": "Start date & time",
+            "name": "start_date",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y g:i a",
+            "return_format": "l-M-d-g:i a",
+            "first_day": 1
+        },
+        {
+            "key": "field_61be43c45f087",
+            "label": "End date & time",
+            "name": "end_date",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y g:i a",
+            "return_format": "d\/m\/Y g:i a",
+            "first_day": 1
+        },
+        {
+            "key": "field_61c39107090de",
+            "label": "Location",
+            "name": "location",
+            "type": "select",
+            "instructions": "Select the event's location.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "zoom": "Online (via Zoom link)",
+                "usc": "Universal Spiritualist Centre",
+                "youtube": "Live on YouTube",
+                "tba": "TBA"
+            },
+            "default_value": "Online with Zoom",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "label",
+            "placeholder": ""
+        },
+        {
+            "key": "field_61c25aff2f62d",
+            "label": "Zoom registration link",
+            "name": "zoom_registration_link",
+            "type": "url",
+            "instructions": "This should be the link from Zoom.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c39107090de",
+                        "operator": "==",
+                        "value": "zoom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_61c3924a8528c",
+            "label": "Event at USC",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c39107090de",
+                        "operator": "==",
+                        "value": "usc"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "This event is at Universal Spiritualist Centre.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_61c392768528d",
+            "label": "Event on YouTube",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c39107090de",
+                        "operator": "==",
+                        "value": "youtube"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "This eventwill be held on YouTube live.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_61c392a78528e",
+            "label": "Event location TBA",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c39107090de",
+                        "operator": "==",
+                        "value": "tba"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "Location is yet to be decided and is currently TBA.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_61c263e73d8ae",
+            "label": "Event image",
+            "name": "event_image",
+            "type": "image",
+            "instructions": "Add an image for the event.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_61c25a7797db9",
+            "label": "Event description",
+            "name": "event_description",
+            "type": "textarea",
+            "instructions": "This content is required and should be a short intro to the event type. This does not need to include details about the specific service or speaker and should focus more on the overall purpose of this stype of service. That being said, you can of course add anything you'd like here (Max 256 characters).",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": 256,
+            "rows": 4,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_61c253a80a318",
+            "label": "More Content",
+            "name": "content_row",
+            "type": "repeater",
+            "instructions": "Add groups of content in rows. Each row has a title and a content block that can be filled with paragraphs.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_61c254380a319",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Content",
+            "sub_fields": [
+                {
+                    "key": "field_61c254380a319",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "Add a content row title (Max characters 64).",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 64
+                },
+                {
+                    "key": "field_61c254590a31a",
+                    "label": "Content block",
+                    "name": "content_block",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": "br"
+                }
+            ]
+        },
+        {
+            "key": "field_61c1293970222",
+            "label": "Speaker Information",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_61c250d0c0917",
+            "label": "Include Speaker?",
+            "name": "include_speaker_toggle?",
+            "type": "true_false",
+            "instructions": "Should this event include information about a speaker?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        },
+        {
+            "key": "field_61c251b073c02",
+            "label": "No speaker information included",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c250d0c0917",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "Speaker info is set to be off.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_61c1296370224",
+            "label": "Speaker name",
+            "name": "speaker_name",
+            "type": "text",
+            "instructions": "Add the speaker's name. Add <b>\"TBA\"<\/b> if the speaker is not known.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c250d0c0917",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61c1299870225",
+            "label": "Speaker image?",
+            "name": "speaker_image_toggle",
+            "type": "true_false",
+            "instructions": "Do you want to add an image for this speaker? A placeholder image will be added for you if this is set to <b>Off<\/b>.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c250d0c0917",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "On",
+            "ui_off_text": "Off"
+        },
+        {
+            "key": "field_61c129ca70226",
+            "label": "Speaker image",
+            "name": "speaker_image",
+            "type": "image",
+            "instructions": "Chose or upload a photo of this speaker.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c250d0c0917",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_61c1299870225",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_61c12a0070227",
+            "label": "No speaker image",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c250d0c0917",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_61c1299870225",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "You have chosen not to upload an image for this speaker. A placeholder USC logo image will be added for you.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_61c254f29255b",
+            "label": "Speaker bio",
+            "name": "speaker_bio",
+            "type": "textarea",
+            "instructions": "Add some information about the speaker (Max 1500 characters).",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c250d0c0917",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": 1500,
+            "rows": 4,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_61c255279255c",
+            "label": "Speaker contact?",
+            "name": "speaker_contact_toggle",
+            "type": "true_false",
+            "instructions": "Toggle this on to include speaker contact information.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c250d0c0917",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "On",
+            "ui_off_text": "Off"
+        },
+        {
+            "key": "field_61c258589255d",
+            "label": "Speaker's email",
+            "name": "speakers_email",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c250d0c0917",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_61c255279255c",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_61c2589459a1c",
+            "label": "No contact information",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c250d0c0917",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_61c255279255c",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "The speaker's contact information will not be shared for this event.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ]
+    ],
+    "menu_order": 15,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1640207904
+}

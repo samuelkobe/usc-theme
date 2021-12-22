@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 	<main role="main">
-		<!-- section -->
+		<?php get_template_part('parts/_page-hero'); ?>
 		<section>
 
 			<h1><?php _e( 'Archives', 'web-ok-starter' ); ?></h1>

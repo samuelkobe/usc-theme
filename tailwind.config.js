@@ -29,6 +29,7 @@ module.exports = {
       },
       minHeight: {
         '96': '24rem',
+        '160': '40rem',
         '192': '48rem',
         '35vh': '35vh',
       },
@@ -41,6 +42,7 @@ module.exports = {
         button: ["Nunito", "sans-serif"]
       },
       height: {
+        '88': '22rem',
         '108': '27rem',
         '128': '32rem',
         'full-plus': 'calc(100% + 12rem)',
@@ -61,6 +63,7 @@ module.exports = {
         'height': 'height',
       },
       width: {
+        '88': '22rem',
         '192': '48rem',
       },
       zIndex: {

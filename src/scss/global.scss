@@ -7,9 +7,9 @@
 .custom-h-screen {
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh, 1vh) * 100);
-  &.custom-h-screen-85 {
-    height: 85vh; /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 85);
+  &.custom-h-screen-80 {
+    height: 80vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 80);
   }
   &.custom-h-screen-55 {
     height: 55vh; /* Fallback for browsers that do not support Custom Properties */
@@ -29,9 +29,9 @@
   @media (min-width: 1024px) {
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
-    &.custom-h-screen-85 {
-      height: 85vh; /* Fallback for browsers that do not support Custom Properties */
-      height: calc(var(--vh, 1vh) * 85);
+    &.custom-h-screen-80 {
+      height: 80vh; /* Fallback for browsers that do not support Custom Properties */
+      height: calc(var(--vh, 1vh) * 80);
     }
     &.custom-h-screen-55 {
       height: 55vh; /* Fallback for browsers that do not support Custom Properties */

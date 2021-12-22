@@ -60,10 +60,11 @@
 <script type="module">
 const heroSwiper = new Swiper('.swiper', {
     slidesPerView: 1,
+    simulateTouch: false,
     loop: false,
-    // autoplay: {
-    //     delay: 4000,
-    // },
+    autoplay: {
+        delay: 5000,
+    },
     pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
