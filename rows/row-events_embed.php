@@ -76,12 +76,15 @@
                                 <img class="absolute left-0 right-0 object-cover w-full h-64 -z-1 opacity-80 duration-300 transition-all transform scale-105 rounded" src="<?php echo esc_url( $event_image['url'] ); ?>" alt="<?php echo esc_attr( $event_image['alt'] ); ?>" />
                             <?php endif; ?>
                             <?php
-                                $init_data = get_field( 'start_date' ); 
-                                $arr = explode('-', $init_data);
+                   
+                                $event_start = strtotime(get_field( 'start_date' ));
+                                $event_start_date = date("l-M-d-g:i a", $event_start);
+                                $arr_start = explode('-', $event_start_date);
+                       
                             ?>
                             <div class="absolute top-4 right-4 w-20 h-20 p-2 bg-brand-<?php echo $cat_bg_colour; ?> font-button uppercase rounded">
-                                <span class="block text-2xl tracking-wide w-full text-center"><?php echo $arr[1]; ?></span>
-                                <span class="block text-4xl tracking-wide w-full text-center -mt-1"><?php echo $arr[2]; ?></span>
+                                <span class="block text-2xl tracking-wide w-full text-center"><?php echo $arr_start[1]; ?></span>
+                                <span class="block text-4xl tracking-wide w-full text-center -mt-1"><?php echo $arr_start[2]; ?></span>
                             </div>
                             
                             <div class="flex flex-col justify-end items-start w-full h-full p-4">
