@@ -34,18 +34,22 @@
 
 
                 // Find current date time.
-                // date_default_timezone_set('America/Vancouver');
-                
-                // $date_now = date('Y-m-d H:i:s', strtotime( $d . "0 days")); // the date is removed 24hrs after it ends
-                $date_now = date('Y-m-d H:i:s', strtotime( $d . "-8 hours")); // the date is removed 24hrs after it ends
-                $date_now_w_end_date_offset = date('Y-m-d H:i:s', strtotime( $d . " 1 days")); // the date is removed 24hrs after it ends
-
+                $date_now = date('Y-m-d H:i:s', strtotime( $d . "-8 hours")); // Vancouver timezone
                 $time_now = strtotime($date_now);
-                $time_now_w_offset = strtotime($date_now_w_end_date_offset);
+                
+                $date_now_w_end_date_offset = date('Y-m-d H:i:s', strtotime( $d . " -1 days -8 hours")); // the date is removed 24hrs after it ends
 
                 $args = array( 
                     'posts_per_page'    => -1,
                     'post_type'         => 'event',
+                    'meta_query' => array(
+                        array(
+                            'key'           => 'end_date',
+                            'compare'       => '>=',
+                            'value'         => $date_now_w_end_date_offset,
+                            'type'          => 'DATETIME',
+                        )
+                    ),
                     'tax_query'         => array(
                         array(
                             'taxonomy'  => 'category',
@@ -66,18 +70,29 @@
                     <div class="w-full flex flex-row bg-white text-brand-black hover:text-brand-black rounded no-underline mb-16 shadow-2xl shadow-brand-main event-hover-effect event-hover-effect-no-opacity">
 
                         <div class="w-full md:w-1/4 relative z-0 overflow-hidden flex items-center justify-center rounded-tl rounded-bl">
-                            <?php                               
+                            <?php
+                                $button = 'button main mt-3 md:mt-6 mb-2';
+                                $button_highlighted = 'button accent mt-3 md:mt-6 mb-2';
+
+                                $active_event = false;
+                                $past_event = false;
+
                                 $event_start = strtotime(get_field( 'start_date' )); // take data from user input and make it into a time stamp for the event start
                                 $event_end = strtotime(get_field( 'end_date' ));  // take data from user input and make it into a time stamp for the event end
+
+                                if ($time_now > $event_end) {
+                                    $past_event = true;
+                                }
+
+                                if($time_now > $event_start && $time_now < $event_end) {
+                                    $active_event = true;
+                                }
 
                                 $formatted_event_start = date("l-M-d-g:i a", $event_start); // convert the time stamp into a viewable format that can later be chopped up.
 
                                 $arr_start = explode('-', $formatted_event_start); // explode the new formatted string that is the start date
 
                                 $displayed_date = $arr_start[0] . ", " . date('F d, Y | g:i a', $event_start); // assembled date with full month name
-
-                                $button = 'button main mt-3 md:mt-6 mb-2';
-                                $button_highlighted = 'button accent mt-3 md:mt-6 mb-2';
                             ?>
                             
                             <div class="absolute top-4 right-4 w-20 h-20 p-2 bg-brand-<?php echo $cat_bg_colour;?> text-white font-button uppercase rounded">
@@ -90,18 +105,7 @@
                                 <img class="w-full h-80 object-cover rounded-tl rounded-bl -z-1 duration-500 transition-all transform scale-100" src="<?php echo esc_url( $event_image['url'] ); ?>" alt="<?php echo esc_attr( $event_image['alt'] ); ?>" />
                             <?php endif; ?>
                         </div>
-                        <div class="w-full md:w-3/4">        
-                        
-                            <div class="w-full bg-pink-800 text-4xl text-white">
-                                <?php echo "timestamp now: " . $time_now ; ?> <br>
-                                ------------------------<br>
-                                <?php echo "event start: " . $event_start ; ?> <br>
-                                <?php echo "event end: " . $event_end ; ?> <br>
-                                ------------------------<br>
-                                <?php echo $formatted_event_start ; ?> <br>
-                                
-                            </div>
-                        
+                        <div class="w-full md:w-3/4">                       
                             <div class="flex flex-col w-full h-full p-4 lg:px-8 lg:py-6">
                                 <p class="font-semibold text-xl lg:text-3xl text-brand-dark mb-1 lg:mb-2"><?php the_title() ; ?></p>                                
                                 <p class="font-semibold text-base lg:text-xl text-brand-main tracking-wider"><?php echo $displayed_date; ?></p>
@@ -111,12 +115,18 @@
                                     <div class="flex flex-row mr-0 lg:mr-4">
                                         <a class="<?php echo $button; ?>" href="<?php the_permalink(); ?>">Learn More</a>
                                     </div>
-                                    <div class="flex flex-row mr-0 lg:mr-4">
-                                        <a class="<?php echo $button; ?>" href="<?php the_field( 'zoom_registration_link' ); ?>">Register Now</a>
-                                    </div>                               
-                                    <div class="flex flex-row mr-0 lg:mr-4">
-                                        <a class="<?php echo $button_highlighted; ?>" href="<?php the_field( 'zoom_registration_link' ); ?>">Join Now</a>
-                                    </div>                                  
+                                    <?php if($past_event == false) : ?>
+                                        <?php if($active_event == false) : ?>
+                                            <div class="flex flex-row mr-0 lg:mr-4">
+                                                <a class="<?php echo $button; ?>" href="<?php the_field( 'zoom_registration_link' ); ?>">Register Now</a>
+                                            </div>                   
+                                        <?php endif; ?>                       
+                                    <?php endif; ?>                       
+                                    <?php if($active_event == true) : ?>              
+                                        <div class="flex flex-row mr-0 lg:mr-4">
+                                            <a class="<?php echo $button_highlighted; ?>" href="<?php the_field( 'zoom_registration_link' ); ?>">Join Now</a>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
