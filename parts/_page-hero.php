@@ -10,7 +10,7 @@
 			if ( get_sub_field( 'page_hero_height' ) == 1 ) :
                 $hero_height = 'lg:custom-h-screen custom-h-screen-80 min-h-96 lg:min-h-160 xl:min-h-192';
             else :
-                $hero_height = 'lg:custom-h-screen custom-h-screen-55 min-h-96 lg:min-h-96 mb-8 mb-12';
+                $hero_height = 'lg:custom-h-screen custom-h-screen-55 min-h-96 lg:min-h-96 mb-8 lg:mb-12';
 			endif;
             if ( have_rows( 'background_blend_colour' ) ) :
                 while ( have_rows( 'background_blend_colour' ) ) : the_row(); 

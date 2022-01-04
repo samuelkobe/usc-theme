@@ -36,7 +36,7 @@
                         <?php while ( have_rows( 'content_settings' ) ) : the_row(); ?>
                             <h3 class="text-lg lg:text-2xl font-title font-bold text-brand-dark text-left mb-2"><?php the_sub_field( 'title' ); ?></h3>
                             <h2 class="text-2xl lg:text-3xl 2xl:text-4xl xl:leading-snug font-title font-bold text-brand-dark text-left mb-2"><?php the_sub_field( 'name' ); ?></h2>
-                            <h4 class="text-base lg:text-lg font-title font-bold text-brand-dark text-left mb-4"><?php the_sub_field( 'focuses' ); ?></h4>
+                            <h4 class="text-base lg:text-lg font-title font-bold text-brand-dark text-left mb-2 kg:mb-4"><?php the_sub_field( 'focuses' ); ?></h4>
                             <div class="lg:-bottom-7 h-1 lg:h-2 w-12 lg:w-16 rounded bg-brand-<?php echo $colour; ?> z-10 pointer-events-none mb-4"></div>
                             <p class="text-sm lg:text-lg"><?php the_sub_field( 'content' ); ?></p>
                             <div class="flex flex-row relative">

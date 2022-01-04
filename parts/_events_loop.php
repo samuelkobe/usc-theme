@@ -59,8 +59,6 @@
                     ),
                     'order'             => 'ASC',
                     'orderby'           => 'meta_value',
-                    'meta_key'          => 'start_date',
-                    'meta_type'         => 'DATETIME'
                 );
 
                 $the_query = new WP_Query( $args );
@@ -79,6 +77,14 @@
 
                                 $event_start = strtotime(get_field( 'start_date' )); // take data from user input and make it into a time stamp for the event start
                                 $event_end = strtotime(get_field( 'end_date' ));  // take data from user input and make it into a time stamp for the event end
+                                 
+                                $description_full = get_field( 'event_description');
+                                if(!empty($description_full) && strlen($description_full) > 256) {
+                                    $ellipsis = "...";
+                                    $description = substr($description_full, 0, 256) . $ellipsis;
+                                } else {
+                                    $description = get_field( 'event_description');
+                                }                                
 
                                 if ($time_now > $event_end) {
                                     $past_event = true;
@@ -110,7 +116,7 @@
                                 <p class="font-semibold text-xl lg:text-3xl text-brand-dark mb-1 lg:mb-2"><?php the_title() ; ?></p>                                
                                 <p class="font-semibold text-base lg:text-xl text-brand-main tracking-wider"><?php echo $displayed_date; ?></p>
                                 <p class="text-sm lg:text-base text-brand-accent mb-1 lg:mb-2"><?php the_field( 'location' ); ?></p>
-                                <p class="text-sm lg:text-base text-brand-black"><?php the_field( 'event_description' ); ?></p>
+                                <p class="text-sm lg:text-base text-brand-black"><?php echo $description; ?></p>
                                 <div class="flex flex-row">
                                     <div class="flex flex-row mr-0 lg:mr-4">
                                         <a class="<?php echo $button; ?>" href="<?php the_permalink(); ?>">Learn More</a>

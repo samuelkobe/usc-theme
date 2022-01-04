@@ -207,7 +207,7 @@
             "label": "Event description",
             "name": "event_description",
             "type": "textarea",
-            "instructions": "This content is required and should be a short intro to the event type. This does not need to include details about the specific service or speaker and should focus more on the overall purpose of this stype of service. That being said, you can of course add anything you'd like here (Max 256 characters).",
+            "instructions": "This content is required and should be a short intro to the event type. This does not need to include details about the specific service or speaker and should focus more on the overall purpose of this stype of service. That being said, you can of course add anything you'd like here (Max 1500 characters).",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -217,8 +217,8 @@
             },
             "default_value": "",
             "placeholder": "",
-            "maxlength": 256,
-            "rows": 4,
+            "maxlength": 1500,
+            "rows": 8,
             "new_lines": "br"
         },
         {
@@ -597,5 +597,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1640999490
+    "modified": 1641277299
 }

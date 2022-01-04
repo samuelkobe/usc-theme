@@ -11,16 +11,12 @@
                 <?php
 
                 // Find current date time.
-                date_default_timezone_set('America/Vancouver');
-                // $date_now = date('Y-m-d H:i:s'); // as soon as the event ends it is removed
-                // $time_now = strtotime($date_now);
-
-                $date_now_w_end_date_offset = date('Y-m-d H:i:s', strtotime( $d . " -1 days")); // the date is removed 24hrs after it ends
-                $time_now = strtotime($date_now_w_end_date_offset);
+                $date_now = date('Y-m-d H:i:s', strtotime( $d . " -1 days -8 hours")); // as soon as the event ends it is removed
+                $time_now = strtotime($date_now);
 
                 // Find date time in 28 days.
-                $time_next_week = strtotime('+35 day', $time_now);
-                $date_next_week = date('Y-m-d H:i:s', $time_next_week);
+                $time_next_year = strtotime('+365 days', $time_now);
+                $date_next_year = date('Y-m-d H:i:s', $time_next_year);
 
                 // Query events.
                 $posts = get_posts(array(
@@ -28,18 +24,15 @@
                     'post_type'      => 'event',
                     'meta_query'     => array(
                         array(
-                            // 'key'         => 'start_date', // go off start_date
-                            'key'         => 'end_date', // go off end_date
+                            'key'         => 'end_date', // go off start_date
                             'compare'     => 'BETWEEN',
-                            // 'value'       => array( $date_now, $date_next_week ), // with start date only no 24 hr offset
-                            'value'       => array( $date_now_w_end_date, $date_next_week ),
+                            'value'       => array( $date_now, $date_next_year ), // with start date only no 24 hr offset
                             'type'        => 'DATETIME'
                         )
                     ),
                     'order'          => 'ASC',
                     'orderby'        => 'meta_value',
                     // 'meta_key'       => 'start_date', // go off start_date
-                    'meta_key'       => 'end_date', // go off end_date
                     'meta_type'      => 'DATETIME'
                 )); 
 
@@ -77,9 +70,9 @@
                             <?php endif; ?>
                             <?php
                    
-                                $event_start = strtotime(get_field( 'start_date' ));
-                                $event_start_date = date("l-M-d-g:i a", $event_start);
-                                $arr_start = explode('-', $event_start_date);
+                                $event_start = strtotime(get_field( 'start_date' )); // take data from user input and make it into a time stamp for the event start
+                                $formatted_event_start = date("l-M-d-g:i a", $event_start); // convert the time stamp into a viewable format that can later be chopped up.
+                                $arr_start = explode('-', $formatted_event_start);
                        
                             ?>
                             <div class="absolute top-4 right-4 w-20 h-20 p-2 bg-brand-<?php echo $cat_bg_colour; ?> font-button uppercase rounded">
