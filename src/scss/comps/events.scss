@@ -1,4 +1,4 @@
-.event-hover-effect {
+.event-hover-effect { // create a hover effect for the images of the events
   &:hover {
     img {
       @apply scale-110 opacity-70;
