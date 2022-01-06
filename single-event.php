@@ -7,17 +7,18 @@
         $categories = get_the_category();
 
         if ( ! empty( $categories ) ) {
-            $cat_name = $categories[0]->name;   
+            $cat_name = $categories[0]->name;
+            $cat_slug_url = $categories[0]->cat_name;
             $cat_slug =  strtolower( $categories[0]->slug );
         }
         
-        if ( $cat_slug == 'sunday-morning' ) {
+        if ( $cat_slug == 'sunday-morning-service' ) {
             $cat_bg_colour = 'main';
-        } elseif ($cat_slug == 'sunday-evening') {
+        } elseif ($cat_slug == 'sunday-evening-service') {
             $cat_bg_colour = 'dark';
-        } elseif ($cat_slug == 'friday-program') {
+        } elseif ($cat_slug == 'friday-evening-programs') {
             $cat_bg_colour = 'accent';
-        } elseif ($cat_slug == 'workshop') {
+        } elseif ($cat_slug == 'workshops') {
             $cat_bg_colour = 'neutral';
         } else {
             $cat_bg_colour = 'black';
@@ -50,7 +51,6 @@
 
 
     ?>
-    
     <section class="flex relative w-full lg:custom-h-screen custom-h-screen-55 min-h-96 lg:min-h-96 overflow-hidden bg-brand-<?php echo $cat_bg_colour; ?>">
         <div class="absolute left-0 top-0 h-full w-full bg-black z-10 opacity-20 pointer-events-none"></div>
         <div class="absolute left-0 bottom-0 h-3 w-full bg-brand-<?php echo $cat_bg_colour; ?> z-10 pointer-events-none"></div>
@@ -76,7 +76,7 @@
         <div class="contained py-6 lg:py-16 object-reveal-short">
             
             <div class="w-full mb-6 lg:mb-12">
-                <p class="tracking-wider"><?php echo $cat_name . "s > " . get_the_title(); ?></p>
+                <p class="tracking-wider"><a class="text-brand-black" href="/service/<?php echo formatUrl($cat_slug_url) ; ?>"><?php echo $cat_name ?></a><?php echo " > " . get_the_title(); ?></p>
             </div>
             
             <div class="w-full relative">
@@ -121,7 +121,7 @@
 
         <div class="w-full lg:mr-1/12 lg:w-11/12 lg:p-1/24 bg-white rounded shadow-2xl shadow-brand-main relative">
             
-            <h2 class="absolute top-4 left-4 z-10 pointer-events-none lg:pointer-events-auto lg:z-0 lg:top-0 lg:left-0 lg:relative mb-6 lg:mb-12 text-2xl lg:text-5xl font-semibold text-white lg:text-brand-<?php echo $cat_bg_colour; ?>">Speaker Bio</h2>
+            <h2 class="absolute top-4 left-4 z-10 pointer-events-none lg:pointer-events-auto lg:z-0 lg:top-0 lg:left-0 lg:relative mb-6 lg:mb-12 text-2xl lg:text-5xl font-semibold text-white lg:text-brand-<?php echo $cat_bg_colour; ?>">Speaker/Facilitator</h2>
 
             <div class="flex flex-col lg:flex-row items-center w-full">
 

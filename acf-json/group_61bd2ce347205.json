@@ -282,7 +282,7 @@
         },
         {
             "key": "field_61c1293970222",
-            "label": "Speaker Information",
+            "label": "Speaker\/Facilitator Information",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -298,10 +298,10 @@
         },
         {
             "key": "field_61c250d0c0917",
-            "label": "Include Speaker?",
+            "label": "Include Speaker\/Facilitator?",
             "name": "include_speaker_toggle?",
             "type": "true_false",
-            "instructions": "Should this event include information about a speaker?",
+            "instructions": "Should this event include information about a speaker\/facilitator?",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -521,7 +521,7 @@
             "name": "speakers_email",
             "type": "email",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": [
                 [
                     {
@@ -597,5 +597,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1641277299
+    "modified": 1641425705
 }

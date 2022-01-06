@@ -433,6 +433,14 @@ function clear_nav_menu_item_class($classes, $item, $args) {
   }
 }
 
+function formatUrl($str, $sep='-')
+{
+        $res = strtolower($str);
+        $res = preg_replace('/[^[:alnum:]]/', ' ', $res);
+        $res = preg_replace('/[[:space:]]+/', $sep, $res);
+        return trim($res, $sep);
+}
+
 /*------------------------------------*\
 	Custom Services Post Type
 \*------------------------------------*/

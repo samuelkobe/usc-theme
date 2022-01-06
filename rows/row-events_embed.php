@@ -32,8 +32,6 @@
                     ),
                     'order'          => 'ASC',
                     'orderby'        => 'meta_value',
-                    // 'meta_key'       => 'start_date', // go off start_date
-                    'meta_type'      => 'DATETIME'
                 )); 
 
                 if( $posts ) : ?>
@@ -48,13 +46,13 @@
                             if ( sizeof($categories) > 1 ) {
                                 $cat_bg_colour = 'black';
                             } else {
-                                if ( $cat_slug == 'sunday-morning' ) {
+                                if ( $cat_slug == 'sunday-morning-service' ) {
                                     $cat_bg_colour = 'main';
-                                } elseif ($cat_slug == 'sunday-evening') {
+                                } elseif ($cat_slug == 'sunday-evening-service') {
                                     $cat_bg_colour = 'dark';
-                                } elseif ($cat_slug == 'friday-program') {
+                                } elseif ($cat_slug == 'friday-evening-programs') {
                                     $cat_bg_colour = 'accent';
-                                } elseif ($cat_slug == 'workshop') {
+                                } elseif ($cat_slug == 'workshops') {
                                     $cat_bg_colour = 'neutral';
                                 }
                             }
@@ -82,7 +80,13 @@
                             
                             <div class="flex flex-col justify-end items-start w-full h-full p-4">
                                 <p class="font-button text-lg lg:text-xl"><?php the_title() ; ?></p>
-                                <p class="font-button text-base lg:text-lg"><span class="text-xs lg:text-sm">Speaker: </span><?php the_field( 'speaker_name' ); ?></p>
+                                <?php $speaker_name = get_field( 'speaker_name' );
+                                if(!empty( $speaker_name ) ) :
+                                    // speaker_name already set.
+                                else : 
+                                    $speaker_name = 'TBA';
+                                endif; ?>
+                                <p class="font-button text-xs lg:text-sm">Speaker: <?php echo $speaker_name; ?></p>
                             </div>
                         </a>
                     <?php endforeach; ?>

@@ -17,7 +17,7 @@
 
 <section class="flex contained items-center justify-center object-reveal-short">
     
-    <div class="w-full py-8 flex flex-col lg:flex-row items-center justify-center relative">
+    <div class="w-full pt-8 flex flex-col lg:flex-row items-center justify-center relative">
 
         <div class="hidden w-0 lg:flex <?php echo $left_margin ;?>"></div>
 
@@ -27,7 +27,7 @@
                 <h3 class="text-base lg:text-2xl font-title font-light uppercase text-brand-main mt-4 xl:mt-8 md:text-<?php echo $text_alignment ;?>"><?php the_sub_field( 'subtitle' ); ?></h3>
 			<?php else : ?>
 			<?php endif; ?>
-                <h2 class="text-xl sm:text-2xl xl:text-3xl xl:leading-snug my-2 xl:my-4 font-title font-semibold capitalize text-brand-dark md:text-<?php echo $text_alignment ;?>"><?php the_sub_field( 'title' ); ?></h2>
+                <h2 class="text-xl sm:text-2xl xl:text-3xl xl:leading-snug my-2 xl:my-3 font-title font-semibold capitalize text-brand-dark md:text-<?php echo $text_alignment ;?>"><?php the_sub_field( 'title' ); ?></h2>
 			<?php if ( get_sub_field( 'content_toggle' ) == 1 ) : ?>
                 <p class="mt-2 text-base lg:text-xl text-grey-dim font-light md:text-<?php echo $text_alignment ;?>"><?php the_sub_field( 'content' ); ?></p>
 			<?php else : ?>
