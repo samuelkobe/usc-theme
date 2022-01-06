@@ -152,9 +152,9 @@
 
     </section>
 <?php else : ?>
-    <!-- <section class="contained my-8 xl:my-16 object-reveal-short">
+    <section class="contained my-8 xl:my-16 object-reveal-short">
         <div class="w-full lg:w-5/6 xl:w-3/4 mx-0 lg:mx-1/12 xl:ml-1/12 xl:mr-1/6">
             <p class="text-brand-neutral">Upcoming events of this nature are not publically posted.</p>
         </div>
-    </section> -->
+    </section>
 <?php endif; ?>
