@@ -3,6 +3,39 @@ const header_element = document.getElementById("header");
 const menu_button = document.getElementById("menu-button"); // div#menu-button in header.php
 const menu = document.getElementById("menu"); // div#menu-button in header.php
 
+var submenu = document.querySelectorAll(".sub-menu"); // ul.sub-menu generatd by WP inside menu, settings can be altered in functions.php
+
+for (let index = 0; index < submenu.length; index++) {
+    var submenu_parent = submenu[index].parentElement; // ul.sub-menu's parent element (in this case its a <a> from the nav>ul>li)
+    submenu_parent.classList.add("submenu-parent");
+
+    var span_arrow = document.createElement("span");
+    span_arrow.classList.add('submenu-arrow');
+
+    submenu[index].parentElement.appendChild(span_arrow);
+}
+
+var span_arrows = document.getElementsByClassName("submenu-arrow");
+
+var myFunction = function () {
+    var submenu_sibling = this.previousElementSibling;
+
+    if (submenu_sibling.classList.contains('open')) {
+        submenu_sibling.classList.remove('open');
+        this.classList.remove('open');
+    } else {
+        submenu_sibling.classList.add('open');
+        this.classList.add('open');
+    }
+};
+
+Array.from(span_arrows).forEach(function (arrow) {
+    arrow.addEventListener('click', myFunction);
+});
+
+
+
+
 const ATTHETOP = "topped";
 const SCROLLUP = "scroll-up";
 const SCROLLDOWN = "scroll-down";
@@ -20,12 +53,31 @@ menu_button.addEventListener('click', (event) => {
     if (menu_button.classList.contains('open')) {
         menu_button.classList.remove('open');
         menu.classList.remove('open');
+        submenu.classList.remove('open');
+        // submenu_parent.classList.remove('parent-open');
     } else {
         menu_button.classList.add('open');
         menu.classList.add('open');
     }
 
 }, false);
+
+// Submenu tap/click detection
+// span_arrow.addEventListener('click', (event) => {
+//     // Don't follow the link
+//     event.preventDefault();
+
+//     // Toggle 'opened' class on the .submenu
+//     if (submenu.classList.contains('open')) {
+//         submenu.classList.remove('open');
+//         menu.classList.remove('child-open');
+//         // submenu_parent.classList.remove('parent-open');
+//     } else {
+//         submenu.classList.add('open');
+//         menu.classList.add('child-open');
+//         // submenu_parent.classList.add('parent-open');
+//     }
+// }, false);
 
 // window scroll to hide and reveal menu
 window.addEventListener("scroll", () => {
