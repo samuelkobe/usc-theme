@@ -73,8 +73,8 @@ module.exports = {
   },
   variants: {
     extend: {
-      backgroundColor: ['even'],
-      borderColor: ['even'],
+      backgroundColor: ['even', 'checked'],
+      borderColor: ['even', 'checked'],
       border: ['even'],
       width: ['even'],
       margin: ['even', 'last'],

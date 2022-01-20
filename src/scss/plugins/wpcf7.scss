@@ -23,6 +23,24 @@
   textarea {
     @apply h-24 lg:h-48;
   }
+  #radio-object, .wpcf7-checkbox {
+    @apply flex flex-row w-full mt-2;
+    .wpcf7-list-item.first, .wpcf7-list-item.last, .wpcf7-list-item {
+      @apply flex flex-row items-center;
+      label {
+        @apply flex flex-row items-center;
+        input {
+          @apply w-4 h-4 ml-2;
+        }
+        span {
+          @apply text-lg lg:text-xl text-brand-dark;
+        }
+      }
+    }
+    .wpcf7-list-item.first {
+      @apply ml-0;
+    }
+  }
   input.wpcf7-submit {
     @apply bg-brand-main w-auto border-none ring-0 min-w-32 h-auto lg:min-w-40 text-center py-2 lg:py-3 px-4 mt-2 inline-block lg:px-6 rounded no-underline text-white uppercase font-bold tracking-wider text-sm lg:text-lg font-button transition-colors duration-300 cursor-pointer;
     &:hover {
@@ -70,6 +88,18 @@
     }
     .form-title-label {
       @apply text-lg lg:text-2xl text-brand-dark font-semibold mb-2 inline-block;
+      &.thin-title {
+        @apply font-light mt-6 lg:mt-12;
+      }
+    }
+  }
+
+  div.wordpress-content.wrapper-content {
+    > div.wordpress-content {
+      @apply mt-4 lg:mt-0;
+      &:first-child {
+        @apply mt-0;
+      }
     }
   }
 

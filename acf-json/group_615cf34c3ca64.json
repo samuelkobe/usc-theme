@@ -1050,7 +1050,7 @@
                                     "label": "Paragraph",
                                     "name": "paragraph",
                                     "type": "textarea",
-                                    "instructions": "Add your paragraph here (Max 512 characters).",
+                                    "instructions": "Add your paragraph here.",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -1060,7 +1060,7 @@
                                     },
                                     "default_value": "",
                                     "placeholder": "",
-                                    "maxlength": 512,
+                                    "maxlength": "",
                                     "rows": 4,
                                     "new_lines": "br"
                                 },
@@ -1237,7 +1237,7 @@
                                     "label": "Single line of content",
                                     "name": "single_line_of_content",
                                     "type": "text",
-                                    "instructions": "Add short description of what is to follow (Max 64 characters).",
+                                    "instructions": "Add short description of what is to follow (Max 256 characters).",
                                     "required": 1,
                                     "conditional_logic": [
                                         [
@@ -1257,7 +1257,7 @@
                                     "placeholder": "",
                                     "prepend": "",
                                     "append": "",
-                                    "maxlength": 64
+                                    "maxlength": 256
                                 },
                                 {
                                     "key": "field_61b0007795bb0",
@@ -1821,6 +1821,35 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_61e6280fb3760": {
+                    "key": "layout_61e6280fb3760",
+                    "name": "paypal_embed",
+                    "label": "PayPal Embed",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_61e6281bb3761",
+                            "label": "PayPal code",
+                            "name": "paypal_code",
+                            "type": "wysiwyg",
+                            "instructions": "Paste your PayPal button code here.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "text",
+                            "media_upload": 0,
+                            "toolbar": "full",
+                            "delay": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Content",
@@ -1862,5 +1891,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1639702137
+    "modified": 1642473536
 }
