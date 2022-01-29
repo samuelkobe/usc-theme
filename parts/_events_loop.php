@@ -28,7 +28,10 @@
                     } elseif ($post_slug == 'workshops') {
                         $cat = 'workshops';
                         $cat_bg_colour = 'neutral';
-                    } else {
+                    } elseif ($post_slug == 'mini-readings') {
+                        $cat = 'mini-reading';
+                        $cat_bg_colour = 'black';
+                    }  else {
                         $cat = '';
                         $cat_bg_colour = 'black';
                     }
@@ -65,9 +68,9 @@
 
                     if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-                        <div class="w-full flex flex-row bg-white text-brand-black hover:text-brand-black rounded no-underline mb-16 shadow-2xl shadow-brand-main event-hover-effect event-hover-effect-no-opacity">
+                        <div class="w-full flex flex-col md:flex-row bg-white text-brand-black hover:text-brand-black rounded no-underline mb-16 shadow-2xl shadow-brand-main event-hover-effect event-hover-effect-no-opacity">
 
-                            <div class="w-full md:w-1/4 relative z-0 overflow-hidden flex items-center justify-center rounded-tl rounded-bl">
+                            <div class="w-full md:w-1/4 relative z-0 overflow-hidden flex items-center justify-center rounded-tl rounded-bl-none rounded-tr rounded-br-none md:rounded-tl md:rounded-bl md:rounded-tr-none md:rounded-br-none">
                                 <?php
                                     $button = 'button main mt-3 md:mt-6 mb-2';
                                     $button_highlighted = 'button accent mt-3 md:mt-6 mb-2';
@@ -108,7 +111,7 @@
 
                                 <?php $event_image = get_field( 'event_image' ); ?>
                                 <?php if ( $event_image ) : ?>
-                                    <img class="w-full h-80 object-cover rounded-tl rounded-bl -z-1 duration-500 transition-all transform scale-100" src="<?php echo esc_url( $event_image['url'] ); ?>" alt="<?php echo esc_attr( $event_image['alt'] ); ?>" />
+                                    <img class="w-full h-80 object-cover rounded-tl rounded-bl-none rounded-tr rounded-br-none md:rounded-tl md:rounded-bl md:rounded-tr-none md:rounded-br-none -z-1 duration-500 transition-all transform scale-100" src="<?php echo esc_url( $event_image['url'] ); ?>" alt="<?php echo esc_attr( $event_image['alt'] ); ?>" />
                                 <?php endif; ?>
                             </div>
                             <div class="w-full md:w-3/4">                       
@@ -118,13 +121,13 @@
                                     <p class="text-sm lg:text-base text-brand-accent mb-1 lg:mb-2"><?php the_field( 'location' ); ?></p>
                                     <p class="text-sm lg:text-base text-brand-black"><?php echo $description; ?></p>
                                     <div class="flex flex-row">
-                                        <div class="flex flex-row mr-0 lg:mr-4">
+                                        <div class="flex flex-row mr-4">
                                             <a class="<?php echo $button; ?>" href="<?php the_permalink(); ?>">Learn More</a>
                                         </div>
                                         <?php if($past_event == false) : ?>
                                             <?php if($active_event == false) : ?>
                                                 <div class="flex flex-row mr-0 lg:mr-4">
-                                                    <a class="<?php echo $button; ?>" href="<?php the_field( 'zoom_registration_link' ); ?>">Register Now</a>
+                                                    <a class="<?php echo $button; ?>" href="<?php the_field( 'zoom_registration_link' ); ?>" target="_blank">Register Now</a>
                                                 </div>                   
                                             <?php endif; ?>                       
                                         <?php endif; ?>                       
@@ -140,7 +143,13 @@
                         </div>
 
 
-                    <?php endwhile; endif;
+                    <?php endwhile; 
+                    
+                    else: ?>
+
+                        <p>No services currently scheduled.</p>
+
+                    <?php endif;
 
                     wp_reset_query(); ?>
 

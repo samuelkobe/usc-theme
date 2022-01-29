@@ -94,6 +94,48 @@
             "new_lines": "br"
         },
         {
+            "key": "field_61f0504307bb7",
+            "label": "Service description button?",
+            "name": "service_description_button",
+            "type": "true_false",
+            "instructions": "Choose whether you would like to display a button after the Service description (optional).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        },
+        {
+            "key": "field_61f0507d07bb8",
+            "label": "Service button",
+            "name": "service_button",
+            "type": "link",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61f0504307bb7",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_61c2b6690c967",
             "label": "Upcoming events",
             "name": "",
@@ -197,5 +239,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1640151131
+    "modified": 1643139240
 }

@@ -89,7 +89,7 @@
                     <?php if($past_event == false) : ?>
                         <?php if($active_event == false) : ?>
                             <div class="flex flex-row mr-0 lg:mr-4">
-                                <a class="<?php echo $button; ?>" href="<?php the_field( 'zoom_registration_link' ); ?>">Register Now</a>
+                                <a class="<?php echo $button; ?>" href="<?php the_field( 'zoom_registration_link' ); ?>" target="_blank">Register Now</a>
                             </div>                   
                         <?php endif; ?>                       
                     <?php endif; ?>                       

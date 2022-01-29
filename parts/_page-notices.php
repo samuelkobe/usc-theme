@@ -2,7 +2,7 @@
     $button = 'button main mt-4 md:mt-8 mb-2';
 ?>
 
-<section class="container mx-auto px-6 lg:px-0">
+<section class="container mx-auto px-6 2xl:px-0">
 
     <div class="flex flex-col lg:flex-row py-6 lg:py-24">
 
@@ -15,7 +15,7 @@
                             <?php if ( get_row_layout() == 'notice' ) : ?>
                                 <div class="swiper-slide w-full">
                                     <div class="flex flex-col w-full bg-white text-brand-black">                                        
-                                        <h2 class="font-title font-bold text-2xl lg:text-4xl text-brand-dark mb-2 lg:mb-4"><?php the_sub_field( 'title' ); ?></h2>
+                                        <h2 class="font-title font-bold text-2xl xl:text-4xl text-brand-dark mb-2 lg:mb-4"><?php the_sub_field( 'title' ); ?></h2>
                                         <p class="text-base lg:text-lg lg:leading-relaxed"><?php the_sub_field( 'message' ); ?></p>
                                         <?php $button_link = get_sub_field( 'button_link' ); ?>            
                                         <?php if ( $button_link ) : ?>

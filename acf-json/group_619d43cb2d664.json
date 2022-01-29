@@ -39,7 +39,7 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "maxlength": 32
+                            "maxlength": 48
                         },
                         {
                             "key": "field_619d4a0b0bea4",
@@ -58,7 +58,7 @@
                             "placeholder": "",
                             "maxlength": 258,
                             "rows": 4,
-                            "new_lines": ""
+                            "new_lines": "br"
                         },
                         {
                             "key": "field_619d4a150bea5",
@@ -174,5 +174,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1637893745
+    "modified": 1643138072
 }
