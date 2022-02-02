@@ -1,0 +1,190 @@
+{
+    "key": "group_61facb6371766",
+    "title": "Speakers Settings",
+    "fields": [
+        {
+            "key": "field_61fad2e5faee5",
+            "label": "Speaker image?",
+            "name": "speaker_image_toggle",
+            "type": "true_false",
+            "instructions": "Do you want to add an image for this speaker? A placeholder image will be added for you if this is set to <b>Off<\/b>.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "On",
+            "ui_off_text": "Off"
+        },
+        {
+            "key": "field_61fad2b1faee4",
+            "label": "Speaker image",
+            "name": "speaker_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61fad2e5faee5",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_61fad31bfaee6",
+            "label": "No speaker image",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61fad2e5faee5",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "You have chosen not to upload an image for this speaker. A placeholder USC logo image will be added for you.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_61fad36934bbe",
+            "label": "Speaker bio",
+            "name": "speaker_bio",
+            "type": "textarea",
+            "instructions": "Add some information about the speaker (Max 1500 characters).",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": 1500,
+            "rows": 4,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_61fad3ac48536",
+            "label": "Speaker contact?",
+            "name": "speaker_contact_toggle",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        },
+        {
+            "key": "field_61fad3b748537",
+            "label": "Speaker's email",
+            "name": "speakers_email",
+            "type": "email",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61fad3ac48536",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_61fad407e2b6b",
+            "label": "No contact information",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61fad3ac48536",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "The speaker's contact information will not be shared for this event.",
+            "new_lines": "br",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "speaker"
+            }
+        ]
+    ],
+    "menu_order": 21,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1643828672
+}

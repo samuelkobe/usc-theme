@@ -120,42 +120,15 @@
     <section class="contained my-8 xl:my-16 object-reveal-short">
 
         <div class="w-full lg:mr-1/12 lg:w-11/12 lg:p-1/24 bg-white rounded shadow-2xl shadow-brand-main relative">
-            
+        
             <h2 class="absolute top-4 left-4 z-10 pointer-events-none lg:pointer-events-auto lg:z-0 lg:top-0 lg:left-0 lg:relative mb-6 lg:mb-12 text-2xl lg:text-5xl font-semibold text-white lg:text-brand-<?php echo $cat_bg_colour; ?>">Speaker/Facilitator</h2>
 
-            <div class="flex flex-col lg:flex-row items-center w-full">
+            <?php get_template_part('parts/_speaker_info'); ?>
 
-                    <div class="flex flex-col w-full h-full lg:flex-row">
-                        <div class="w-full h-full lg:w-1/3 order-1">
-                            <?php if ( get_field( 'speaker_image_toggle' ) == 1 ) : ?>
-                                <?php $speaker_image = get_field( 'speaker_image' ); ?>
-                                <?php if ( $speaker_image ) : ?>
-                                    <div class="w-full h-full relative">
-                                        <img class="w-full h-108 xl:h-128 object-cover rounded" src="<?php echo esc_url( $speaker_image['url'] ); ?>" alt="<?php echo esc_attr( $speaker_image['alt'] ); ?>" />
-                                        <div class="absolute left-0 -bottom-1 h-3 w-full lg:rounded-b bg-brand-<?php echo $cat_bg_colour; ?> z-10 pointer-events-none"></div>
-                                    </div>
-                                <?php endif; ?>
-                            <?php else : ?>
-                                <div class="w-full h-full relative">
-                                    <img class="w-full h-108 xl:h-128 object-cover rounded" src="<?php bloginfo('template_url'); ?>/img/logo-icon.jpg" alt="Universal Spiriualist Centre Icon Logo" />
-                                </div>
-                            <?php endif; ?>
-                        </div>
-
-                        <div class="w-full lg:w-2/3 p-8 lg:px-1/24 lg:py-0 order-2 lg:pr-0">
-                            <h3 class="text-lg lg:text-2xl font-title font-bold text-brand-dark text-left mb-2 lg:mb-4"><?php the_field( 'speaker_name' ); ?></h3>
-                            <div class="lg:-bottom-7 h-1 lg:h-2 w-12 lg:w-16 rounded bg-brand-<?php echo $cat_bg_colour; ?> z-10 pointer-events-none mb-2 lg:mb-4"></div>
-                            <p class="text-sm lg:text-lg"><?php the_field( 'speaker_bio' ); ?></p>
-                            <?php if ( get_field( 'speaker_contact_toggle' ) == 1 ) : ?>
-                                <p class="text-base lg:text-xl text-brand-black mt-4">Email <a href="mailto:<?php the_field( 'speakers_email' ); ?>" target="_blank"><?php the_field( 'speakers_email' ); ?></a></p>
-                            <?php else : ?>
-                                <?php // no speaker contact information ?>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-            </div>
         </div>
+
     </section>
+
 <?php else : ?>
 	<?php // no speaker information ?>
 <?php endif; ?>

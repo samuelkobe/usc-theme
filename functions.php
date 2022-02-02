@@ -531,6 +531,51 @@ function create_post_type_events()
     ));
 }
 
+/*------------------------------------*\
+	Custom Speaker Post Type
+\*------------------------------------*/
+
+function create_post_type_speakers()
+{
+    register_taxonomy_for_object_type('category', 'speaker'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'speaker');
+    register_post_type('speaker', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Speakers', 'speaker'),
+            'singular_name' => __('Speaker', 'speaker'),
+            'add_new' => __('Add Speaker', 'speaker'),
+            'add_new_item' => __('Add New Speaker', 'speaker'),
+            'edit' => __('Edit', 'speaker'),
+            'edit_item' => __('Edit Speaker', 'speaker'),
+            'new_item' => __('New Speaker', 'speaker'),
+            'view' => __('View Speaker', 'speaker'),
+            'view_item' => __('View Speaker', 'speaker'),
+            'search_items' => __('Search Speakers', 'speaker'),
+            'not_found' => __('No Speakers found', 'speaker'),
+            'not_found_in_trash' => __('No Speakers found in Trash', 'speaker')
+        ),
+        'has_archive' => false,
+        'public' => true,
+        'menu_position' => 8,
+        'rewrite' => array(
+          'slug' => 'speaker'
+        ),
+        'menu_icon' => 'dashicons-groups',
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'supports' => array(
+            'title',
+            // 'editor',
+            // 'thumbnail'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array(
+            // 'post_tag',
+            // 'category',
+        ) // Add Category and Post Tags support
+    ));
+}
+
 /* ####### Actions + Filters + ShortCodes ####### */
 
 // Add Actions
@@ -540,8 +585,9 @@ add_action('wp_footer', 'footer_scripts'); // Add custom scripts to wp_footer
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'styles_sheet'); // Add Theme Stylesheet
 add_action('init', 'register_menu'); // Add Menus
-add_action('init', 'create_post_type_events'); // Add Services Custom Post Type
 add_action('init', 'create_post_type_services'); // Add Services Custom Post Type
+add_action('init', 'create_post_type_events'); // Add Services Custom Post Type
+add_action('init', 'create_post_type_speakers'); // Add Services Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'webokstarter_wp_pagination'); // Add the Pagination
 

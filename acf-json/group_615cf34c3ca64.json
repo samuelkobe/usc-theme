@@ -1825,7 +1825,7 @@
                 "layout_61e6280fb3760": {
                     "key": "layout_61e6280fb3760",
                     "name": "paypal_embed",
-                    "label": "PayPal Embed",
+                    "label": "PayPal Donation Embed",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -1846,6 +1846,80 @@
                             "media_upload": 0,
                             "toolbar": "full",
                             "delay": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_61faec54d5066": {
+                    "key": "layout_61faec54d5066",
+                    "name": "payment_program_workshop",
+                    "label": "Payment for Program\/Workshop",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_61faecb20ffe5",
+                            "label": "Program\/Workshop Cost",
+                            "name": "program_workshop_cost",
+                            "type": "number",
+                            "instructions": "Add the cost of the Program or Workshop.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": 1,
+                            "max": 1000,
+                            "step": 1
+                        },
+                        {
+                            "key": "field_61faee03e4596",
+                            "label": "Page message",
+                            "name": "page_message",
+                            "type": "text",
+                            "instructions": "Add a message here for the user to explain what they should be doing on this page.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": 1500
+                        },
+                        {
+                            "key": "field_61faec7bd5068",
+                            "label": "Final steps.",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61faecb20ffe5",
+                                        "operator": "!=empty"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "100",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Remember to Update this page once you have added the cost. The PayPal payment will then be added to this page.",
+                            "new_lines": "br",
+                            "esc_html": 0
                         }
                     ],
                     "min": "",
@@ -1891,5 +1965,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1643142210
+    "modified": 1643834974
 }
