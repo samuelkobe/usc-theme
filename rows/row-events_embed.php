@@ -80,13 +80,6 @@
                             
                             <div class="flex flex-col justify-end items-start w-full h-full p-4">
                                 <p class="font-button text-lg lg:text-xl"><?php the_title() ; ?></p>
-                                <?php $speaker_name = get_field( 'speaker_name' );
-                                if(!empty( $speaker_name ) ) :
-                                    // speaker_name already set.
-                                else : 
-                                    $speaker_name = 'TBA';
-                                endif; ?>
-                                <p class="font-button text-xs lg:text-sm">Speaker: <?php echo $speaker_name; ?></p>
                             </div>
                         </a>
                     <?php endforeach; ?>

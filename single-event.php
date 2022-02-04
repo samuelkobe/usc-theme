@@ -105,7 +105,18 @@
                     <?php endif; ?>
                 </div>
 
-                <div class="flex flex-col lg:flex-row mt-8 lg:mt-12">
+                <?php if ( have_rows( 'content_row' ) ) : ?>
+                    <div class="w-full lg:w-2/3 mt-4 lg:mt-8">
+                        <?php while ( have_rows( 'content_row' ) ) : the_row(); ?>
+                            <p class="text-base lg:text-xl text-brand-neutral w-full font-semibold"><?php the_sub_field( 'title' ); ?></p>
+                            <p class="text-sm lg:text-base text-brand-black w-full"><?php the_sub_field( 'content_block' ); ?></p>
+                        <?php endwhile; ?>
+                    </div>
+                    <?php else : ?>
+                        <?php // No rows found ?>
+                    <?php endif; ?>
+
+                <div class="flex flex-col lg:flex-row mt-4 lg:mt-8">
                     <div class="flex flex-row w-full lg:w-2/3 lg:items-end">
                         <p class="text-base lg:text-xl text-brand-black">Questions? Please email <a href="mailto:usc@wttsw.ca" target="_blank">usc@wttsw.ca</a></p>
                     </div>
@@ -116,18 +127,26 @@
     </section>
 
 <?php if ( get_field( 'include_speaker_toggle?' ) == 1 ) : ?>
+
+    <?php if ( have_rows( 'speakers' ) ) : ?>
+	    <?php while ( have_rows( 'speakers' ) ) : the_row(); ?>
 	
-    <section class="contained my-8 xl:my-16 object-reveal-short">
+            <section class="contained my-8 xl:my-16 object-reveal-short">
 
-        <div class="w-full lg:mr-1/12 lg:w-11/12 lg:p-1/24 bg-white rounded shadow-2xl shadow-brand-main relative">
-        
-            <h2 class="absolute top-4 left-4 z-10 pointer-events-none lg:pointer-events-auto lg:z-0 lg:top-0 lg:left-0 lg:relative mb-6 lg:mb-12 text-2xl lg:text-5xl font-semibold text-white lg:text-brand-<?php echo $cat_bg_colour; ?>">Speaker/Facilitator</h2>
+                <div class="w-full lg:mr-1/12 lg:w-11/12 lg:p-1/24 bg-white rounded shadow-2xl shadow-brand-main relative">
+                
+                    <h2 class="absolute top-4 left-4 z-10 pointer-events-none lg:pointer-events-auto lg:z-0 lg:top-0 lg:left-0 lg:relative mb-6 lg:mb-12 text-2xl lg:text-5xl font-semibold text-white lg:text-brand-<?php echo $cat_bg_colour; ?>">Speaker/Facilitator</h2>
 
-            <?php get_template_part('parts/_speaker_info'); ?>
+                    <?php get_template_part('parts/_speaker_info'); ?>
 
-        </div>
+                </div>
 
-    </section>
+            </section>
+
+        <?php endwhile; ?>
+    <?php else : ?>
+        <?php // No rows found ?>
+    <?php endif; ?>
 
 <?php else : ?>
 	<?php // no speaker information ?>

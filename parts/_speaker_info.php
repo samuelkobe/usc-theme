@@ -1,8 +1,7 @@
-<?php $speaker = get_field( 'speaker' ); ?>
-
-<?php if ( $speaker ) : ?>
-	<?php $post = $speaker; ?>
-	<?php setup_postdata( $post ); ?> 
+<?php $selected_speaker = get_sub_field( 'selected_speaker' ); ?>
+<?php if ( $selected_speaker ) : ?>
+    <?php $post = $selected_speaker; ?>
+    <?php setup_postdata( $post ); ?> 
 
     <div class="flex flex-col lg:flex-row items-center w-full">
 
@@ -35,5 +34,6 @@
                 </div>
             </div>
     </div>
+
 <?php wp_reset_postdata(); ?>
 <?php endif; ?>

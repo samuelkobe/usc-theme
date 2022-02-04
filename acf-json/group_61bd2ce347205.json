@@ -300,11 +300,11 @@
             "ui_off_text": "No"
         },
         {
-            "key": "field_61facbadb74c6",
-            "label": "Speaker",
-            "name": "speaker",
-            "type": "post_object",
-            "instructions": "",
+            "key": "field_61fb23941fcd9",
+            "label": "Speakers",
+            "name": "speakers",
+            "type": "repeater",
+            "instructions": "Add up to 7 speakers for this event.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -320,14 +320,43 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "speaker"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "object",
-            "ui": 1
+            "collapsed": "field_61facbadb74c6",
+            "min": 1,
+            "max": 7,
+            "layout": "block",
+            "button_label": "Add speaker",
+            "sub_fields": [
+                {
+                    "key": "field_61facbadb74c6",
+                    "label": "Selected Speaker",
+                    "name": "selected_speaker",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_61c250d0c0917",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "speaker"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                }
+            ]
         },
         {
             "key": "field_61c251b073c02",
@@ -375,5 +404,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1643826936
+    "modified": 1643999280
 }

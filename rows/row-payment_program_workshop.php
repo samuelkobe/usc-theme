@@ -17,11 +17,10 @@
     </div>
     </section>
 
-<script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=CAD" data-sdk-integration-source="button-factory"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AccIVwQ3wEjOJeutEsblAVQP5SNoBS2-DGVD6NzJnjtEa5qslEVbSVV7sJCq1osiY6Bfxpy0OMfFINda&enable-funding=venmo&currency=CAD" data-sdk-integration-source="button-factory"></script>
     <script>
       function initPayPalButton() {
         var php_cost = "<?php echo $cost;?>";
-        console.log(php_cost);
 
         paypal.Buttons({
           style: {

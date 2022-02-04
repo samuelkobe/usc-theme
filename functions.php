@@ -442,6 +442,60 @@ function formatUrl($str, $sep='-')
 }
 
 /*------------------------------------*\
+	Advance Custom Field - Admin Column
+\*------------------------------------*/
+
+add_filter('manage_event_posts_columns', 'filter_events_custom_columns');
+function filter_events_custom_columns($columns) {
+    $columns['start_date'] = 'Start Date + Time';
+    $columns['end_date'] = 'End Date + Time';
+	unset($columns['date']);
+    return $columns;
+}
+
+add_action('manage_event_posts_custom_column',  'action_event_custom_columns');
+function action_event_custom_columns($column) {
+	global $post;
+	if($column == 'start_date') {
+        $event_date = date('M d, Y - h:i A', strtotime(get_field('start_date', $post->ID)));
+		echo($event_date);
+	}
+    	if($column == 'end_date') {
+        $event_date = date('M d, Y - h:i A', strtotime(get_field('end_date', $post->ID)));
+		echo($event_date);
+	}
+}
+
+// Make edit screen columns sortable
+add_filter( 'manage_edit-event_sortable_columns', 'my_sortable_event_column' );
+function my_sortable_event_column( $columns ) {
+    $columns['start_date'] = 'start_date';
+    // $columns['end_date'] = 'end_date';
+    $columns['category'] = 'category';
+    unset($columns['title']);
+
+    return $columns;
+}
+
+add_action( 'pre_get_posts', 'manage_wp_posts_be_qe_pre_get_posts', 1 );
+function manage_wp_posts_be_qe_pre_get_posts( $query ) {
+
+   if ( $query->is_main_query() && ( $orderby = $query->get( 'orderby' ) ) ) {
+      switch( $orderby ) {
+        case 'start_date':
+            $query->set( 'meta_key', 'start_date' );
+            $query->set( 'orderby', 'meta_value' );      
+            break;
+        // case 'end_date':
+        //     $query->set( 'meta_key', 'end_date' );
+        //     $query->set( 'orderby', 'meta_value' );      
+        //     break;
+      }
+   }
+}
+
+
+/*------------------------------------*\
 	Custom Services Post Type
 \*------------------------------------*/
 
