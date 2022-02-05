@@ -24,7 +24,7 @@
             "name": "start_date",
             "type": "date_time_picker",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "50",
@@ -41,7 +41,7 @@
             "name": "end_date",
             "type": "date_time_picker",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "50",
@@ -61,7 +61,7 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "30",
                 "class": "",
                 "id": ""
             },
@@ -96,12 +96,41 @@
                 ]
             ],
             "wrapper": {
-                "width": "50",
+                "width": "45",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "placeholder": ""
+        },
+        {
+            "key": "field_61fd9ae6adbe3",
+            "label": "Zoom Meeting ID",
+            "name": "zoom_meeting_id",
+            "type": "number",
+            "instructions": "Add the Zoom Meeting ID here.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61c39107090de",
+                        "operator": "==",
+                        "value": "zoom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "i.e. '999 5555 1234'",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
         },
         {
             "key": "field_61c3924a8528c",
@@ -120,7 +149,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "50",
+                "width": "70",
                 "class": "",
                 "id": ""
             },
@@ -145,7 +174,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "50",
+                "width": "70",
                 "class": "",
                 "id": ""
             },
@@ -170,7 +199,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "50",
+                "width": "70",
                 "class": "",
                 "id": ""
             },
@@ -404,5 +433,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1643999280
+    "modified": 1644010547
 }

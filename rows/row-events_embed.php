@@ -54,6 +54,8 @@
                                     $cat_bg_colour = 'accent';
                                 } elseif ($cat_slug == 'workshops') {
                                     $cat_bg_colour = 'neutral';
+                                } else {
+                                    $cat_bg_colour = 'black';
                                 }
                             }
                         } else {
@@ -93,23 +95,23 @@
             </div>
 
             <div class="flex flex-row flex-wrap mt-2">
-                <div class="flex w-1/2 lg:w-auto pr-8 mb-2 xl:mb-0 mt-4">
+                <div class="flex w-full sm:w-1/2 lg:w-auto pr-8 mb-2 xl:mb-0 mt-4">
                     <div class="w-4 h-4 mr-2 bg-brand-main rounded-sm"></div>
                     <span class="font-semibold text-base leading-none text-brand-black">Sunday Morning Service</span>
                 </div>
-                <div class="flex w-1/2 lg:w-auto pr-8 mb-2 xl:mb-0 mt-4">
+                <div class="flex w-full sm:w-1/2 lg:w-auto pr-8 mb-2 xl:mb-0 mt-4">
                     <div class="w-4 h-4 mr-2 bg-brand-dark rounded-sm"></div>
                     <span class="font-semibold text-base leading-none text-brand-black">Sunday Evening Service</span>
                 </div>
-                <div class="flex w-1/2 lg:w-auto pr-8 mb-2 xl:mb-0 mt-4">
+                <div class="flex w-full sm:w-1/2 lg:w-auto pr-8 mb-2 xl:mb-0 mt-4">
                     <div class="w-4 h-4 mr-2 bg-brand-accent rounded-sm"></div>
                     <span class="font-semibold text-base leading-none text-brand-black">Friday Evening Program</span>
                 </div>
-                <div class="flex w-1/2 lg:w-auto pr-8 mb-2 xl:mb-0 mt-4">
+                <div class="flex w-full sm:w-1/2 lg:w-auto pr-8 mb-2 xl:mb-0 mt-4">
                     <div class="w-4 h-4 mr-2 bg-brand-neutral rounded-sm"></div>
                     <span class="font-semibold text-base leading-none text-brand-black">Workshop</span>
                 </div>
-                <div class="flex w-1/2 lg:w-auto mt-4">
+                <div class="flex w-full sm:w-1/2 lg:w-auto mt-4">
                     <div class="w-4 h-4 mr-2 bg-brand-black rounded-sm"></div>
                     <span class="font-semibold text-base leading-none text-brand-black">Other</span>
                 </div>
@@ -129,7 +131,6 @@
 <script type="module">
 const eventsSwiper = new Swiper('.swiper-events', {
     loop: false,
-    simulateTouch: false,
     autoplay: {
         delay: 7000,
     },
@@ -139,7 +140,7 @@ const eventsSwiper = new Swiper('.swiper-events', {
     },
     breakpoints: {
         '320': {
-            slidesPerView: 2,
+            slidesPerView: 1.5,
             spaceBetween: 8,
         },
         '1024': {

@@ -57,7 +57,7 @@
 
 </section>
 
-<script type="module">
+<script type="module" async>
 const heroSwiper = new Swiper('.swiper', {
     slidesPerView: 1,
     simulateTouch: false,

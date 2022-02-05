@@ -442,7 +442,7 @@ function formatUrl($str, $sep='-')
 }
 
 /*------------------------------------*\
-	Advance Custom Field - Admin Column
+	Advance Custom Field - Admin Column for events
 \*------------------------------------*/
 
 add_filter('manage_event_posts_columns', 'filter_events_custom_columns');

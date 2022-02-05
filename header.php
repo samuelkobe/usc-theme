@@ -13,8 +13,8 @@
 		<meta property="og:url" content="<?php the_field( 'open_graph_url', 'option' ); ?>" />
 		<meta property="og:description" content="<?php bloginfo('description'); ?>" />
 
-		<link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+		<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
 		<script src="https://unpkg.com/scrollreveal"></script>
 		<script>

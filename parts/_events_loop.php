@@ -68,7 +68,7 @@
 
                     if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-                        <div class="w-full flex flex-col md:flex-row bg-white text-brand-black hover:text-brand-black rounded no-underline mb-16 shadow-2xl shadow-brand-main event-hover-effect event-hover-effect-no-opacity">
+                        <div class="w-full flex flex-col md:flex-row bg-white relative text-brand-black hover:text-brand-black rounded no-underline mb-16 shadow-2xl shadow-brand-main event-hover-effect event-hover-effect-no-opacity">
 
                             <div class="w-full md:w-1/4 relative z-0 overflow-hidden flex items-center justify-center rounded-tl rounded-bl-none rounded-tr rounded-br-none md:rounded-tl md:rounded-bl md:rounded-tr-none md:rounded-br-none">
                                 <?php
@@ -133,10 +133,13 @@
                                         <?php endif; ?>                       
                                         <?php if($active_event == true) : ?>              
                                             <div class="flex flex-row mr-0 lg:mr-4">
-                                                <a class="<?php echo $button_highlighted; ?>" href="<?php the_field( 'zoom_registration_link' ); ?>">Join Now</a>
+                                                <a class="<?php echo $button_highlighted; ?>" href="https://zoom.us/join" target="_blank">Join Now</a>
                                             </div>
                                         <?php endif; ?>
                                     </div>
+                                    <?php if($active_event == true) : ?>              
+                                        <p class="md:absolute md:bottom-4 md:right-4 mt-2 md:mt-0 text-brand-black">Zoom Meeting ID: <span class="text-brand-main"><?php the_field( 'zoom_meeting_id' ); ?></span></p>
+                                    <?php endif; ?>
                                 </div>
                             </div>
 
