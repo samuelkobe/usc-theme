@@ -57,8 +57,6 @@ if (function_exists('add_theme_support')) {
         )
     );
 
-    add_theme_support( "custom-background" );
-
     add_editor_style( 'custom-editor-style.css' );
 
 }
@@ -244,42 +242,6 @@ function add_slug_to_body_class($classes)
     return $classes;
 }
 
-// If Dynamic Sidebar Exists
-if (function_exists('register_sidebar'))
-{
-    // Define Sidebar Widget Area 1
-    register_sidebar(array(
-        'name' => __('Widget Area 1', 'web-ok-starter'),
-        'description' => __('Description for this widget-area...', 'web-ok-starter'),
-        'id' => 'widget-area-1',
-        'before_widget' => '<div id="%1$s" class="%2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>'
-    ));
-
-    // Define Sidebar Widget Area 2
-    register_sidebar(array(
-        'name' => __('Widget Area 2', 'web-ok-starter'),
-        'description' => __('Description for this widget-area...', 'web-ok-starter'),
-        'id' => 'widget-area-2',
-        'before_widget' => '<div id="%1$s" class="%2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>'
-    ));
-}
-
-// Remove wp_head() injected Recent Comment styles
-function my_remove_recent_comments_style()
-{
-    global $wp_widget_factory;
-    remove_action('wp_head', array(
-        $wp_widget_factory->widgets['WP_Widget_Recent_Comments'],
-        'recent_comments_style'
-    ));
-}
-
 // Pagination for paged posts, Page 1, Page 2, Page 3, with Next and Previous Links, No plugin
 function webokstarter_wp_pagination()
 {
@@ -413,6 +375,40 @@ function webokstarter_wp_comments($comment, $args, $depth)
 /*------------------------------------*\
 	Web Ok - Navigation alterations
 \*------------------------------------*/
+
+
+if (is_admin() && current_user_can('director')) {
+
+    function remove_menu () {
+        remove_menu_page('edit.php');
+
+    }
+
+    function hideUnncessaryMenuItems () {
+        global $menu;
+        $itemsToHIDE = array(
+            ('Tools'),
+            ('Users'),
+            ('Comments'),
+            ('Plugins'),
+            ('Gutenberg'),
+            ('Contact'),
+            );
+        end ($menu);
+        while (prev($menu)){
+            $value = explode(
+                    ' ',
+                    $menu[key($menu)][0]);
+            if(in_array($value[0] != NULL?$value[0]:"" , $itemsToHIDE)){
+                unset($menu[key($menu)]);
+            }
+        }
+    }
+
+    add_action('admin_menu', 'remove_menu');
+    add_action('admin_menu', 'hideUnncessaryMenuItems');
+}
+
 
 // Remove and add custom navigation classes - Web Ok
 function add_link_atts($atts, $item) {
@@ -642,7 +638,6 @@ add_action('init', 'register_menu'); // Add Menus
 add_action('init', 'create_post_type_services'); // Add Services Custom Post Type
 add_action('init', 'create_post_type_events'); // Add Services Custom Post Type
 add_action('init', 'create_post_type_speakers'); // Add Services Custom Post Type
-add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'webokstarter_wp_pagination'); // Add the Pagination
 
 // Remove Actions
@@ -655,8 +650,6 @@ remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); // Display relationa
 // Add Filters
 add_filter('avatar_defaults', 'webokstarter_wp_gravatar'); // Custom Gravatar in Settings > Discussion
 add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
-add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
-add_filter('widget_text', 'shortcode_unautop'); // Remove <p> tags in Dynamic Sidebars (better!)
 add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
 // add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected classes (Commented out by default)
 // add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected ID (Commented out by default)
